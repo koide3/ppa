@@ -31,7 +31,7 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.githu
 
 ## Install package
 
-### Iridescence
+### Iridescence [ARM64, AMD64]
 
 ```bash
 apt update
