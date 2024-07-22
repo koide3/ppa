@@ -1,0 +1,15 @@
+Package: iridescence
+Version: 0.1.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 10706
+Depends: libassimp5 (>= 5.2.2~ds0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
+Filename: ./iridescence_0.1.0_amd64.deb
+Size: 3269478
+MD5sum: 9b9982cf0c9340cef1b550302fd6438e
+SHA1: 0be2fc9d0133d070c1876359af8b7492134dfefd
+SHA256: 014c10a220efe450a1d909d903751e264d34e14c742b21025d2721951d980e7f
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
