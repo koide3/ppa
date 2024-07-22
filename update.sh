@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull origin master
+git pull origin main
 distros=("ubuntu2004" "ubuntu2204" "ubuntu2404")
 
 for distro in "${distros[@]}"; do

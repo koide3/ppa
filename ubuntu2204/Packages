@@ -1,14 +1,29 @@
 Package: iridescence
 Version: 0.1.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 10007
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
+Filename: ./iridescence_0.1.0_arm64.deb
+Size: 3122394
+MD5sum: 9250b56ed2dd383cf5daee1c1e18fbaa
+SHA1: d15d611e8f1e80933e7222caddd9ee8285987de6
+SHA256: 16dfc7170b9fb6653061870b6fdbe36db0bfe95c55096c84e3e4fb40de20378a
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: iridescence
+Version: 0.1.0
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 10706
-Depends: libassimp5 (>= 5.2.2~ds0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
+Installed-Size: 10671
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
 Filename: ./iridescence_0.1.0_amd64.deb
-Size: 3269478
-MD5sum: 9b9982cf0c9340cef1b550302fd6438e
-SHA1: 0be2fc9d0133d070c1876359af8b7492134dfefd
-SHA256: 014c10a220efe450a1d909d903751e264d34e14c742b21025d2721951d980e7f
+Size: 3256534
+MD5sum: 8e06ca6556ee062cae9fe8e5e93948d2
+SHA1: 4441bc37318292cf6f381be98aaa8963acc07890
+SHA256: e69f7a645b65ef1b8e4418b98eb5f4bc122082f14799ff9fc1f2eed08cecfc7b
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
