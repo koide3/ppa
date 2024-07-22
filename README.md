@@ -5,7 +5,7 @@
 ### Prerequiresite
 
 ```bash
-apt install curl gpg
+sudo apt install curl gpg
 ```
 
 ### Ubuntu 24.04
@@ -34,6 +34,6 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.githu
 ### Iridescence [ARM64, AMD64]
 
 ```bash
-apt update
-apt install -y iridescence
+sudo apt update
+sudo apt install -y iridescence
 ```
