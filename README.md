@@ -31,9 +31,32 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.githu
 
 ## Install package
 
-### Iridescence [ARM64, AMD64]
+### Iridescence
 
 ```bash
 sudo apt update
-sudo apt install -y iridescence
+sudo apt install -y libiridescence-dev
 ```
+
+### GTSAM
+
+- GTSAM tag : 4.2a9
+- GTSAM_WITH_TBB=OFF
+- GTSAM_BUILD_WITH_MARCH_NATIVE=OFF
+- GTSAM_USE_SYSTEM_EIGEN=ON
+- GTSAM_USE_SYSTEM_METIS=ON
+
+```bash
+sudo apt update
+sudo apt install -y libgtsam-dev
+```
+
+### gtsam_points
+
+```bash
+sudo apt update
+sudo apt install -y libgtsam-points-dev           # No CUDA
+sudo apt install -y libgtsam-points-cuda12.2-dev  # CUDA12.2
+sudo apt install -y libgtsam-points-cuda12.5-dev  # CUDA12.5
+```
+
