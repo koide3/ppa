@@ -1,0 +1,6 @@
+[submodule "packages/iridescence"]
+	path = packages/iridescence
+	url = git@github.com:koide3/iridescence
+[submodule "packages/gtsam_points"]
+	path = packages/gtsam_points
+	url = git@github.com:koide3/gtsam_points
