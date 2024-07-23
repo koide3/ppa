@@ -33,7 +33,7 @@ for platform in "${platforms[@]}"; do
       --build-arg="CUDA_LABEL=$cuda_label" \
       --target extract \
       gtsam_points &
-    
+
     pids[$name]=$!
     labels[$name]=$ubuntu_label
   done

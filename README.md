@@ -1,5 +1,9 @@
 # PPA
 
+## Caution
+
+You have to be aware of the risk of installing software from PPA that implies trusting the author.
+
 ## Setup PPA
 
 ### Prerequiresite
