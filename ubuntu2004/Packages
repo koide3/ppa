@@ -1,33 +1,3 @@
-Package: iridescence
-Version: 0.1.0
-Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 10018
-Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 9)
-Filename: ./iridescence_0.1.0_arm64.deb
-Size: 3111110
-MD5sum: abd2d4b594fe869c39ccc43c8423bc4b
-SHA1: 9a2986f6c69a268237ed339f4501621153f0f580
-SHA256: bc080fb453470ae8d770bc6ea7b93aaeac1cd85dd1d0d94ecb493acb956b1023
-Section: devel
-Priority: optional
-Description: 3D visualization library for rapid prototyping of 3D algorithms
-
-Package: iridescence
-Version: 0.1.0
-Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 10725
-Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 9)
-Filename: ./iridescence_0.1.0_amd64.deb
-Size: 3245266
-MD5sum: 7a571856953752340ed887656fdcdb0e
-SHA1: f5dd37133c6407ff5924622cf22ae697f009a5c8
-SHA256: b3d914e069324d59a2caa457d660428b14ef88e5c78592dd537ed363a8799754
-Section: devel
-Priority: optional
-Description: 3D visualization library for rapid prototyping of 3D algorithms
-
 Package: libgtsam-dev
 Version: 4.2.0
 Architecture: amd64
@@ -35,10 +5,10 @@ Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
 Installed-Size: 29989
 Depends: libboost-dev (>= 1.65)
 Filename: ./libgtsam-dev_4.2.0_amd64.deb
-Size: 3667762
-MD5sum: 37d5519d3cf807a5d2a403edb6b77f52
-SHA1: e70ec0576a1f56b9e4a5a69fbb4412afac39b134
-SHA256: e799e55d003ea18e432c516ea7681d002b877c8504e2c2859f4ed8dab7821910
+Size: 3667776
+MD5sum: 1540b6e2eb962d68f4679f20937bd63a
+SHA1: 9ea2abc07a5d75715e011ec25664bbf0764e0853
+SHA256: f4c38c15c462914c06649d3cb9ce5dd3d6fb9252941fbbc9f3f4e9234bb2dc54
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -176,20 +146,243 @@ Description: GTSAM
  .
  GTSAM was developed in the lab of [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS.md).
 
-Package: libiridescence-dev
+Package: libgtsam-dev
+Version: 4.2.0
+Architecture: arm64
+Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
+Installed-Size: 28489
+Depends: libboost-dev (>= 1.65)
+Filename: ./libgtsam-dev_4.2.0_arm64.deb
+Size: 3494664
+MD5sum: 10ae80152836753d2a737a326bbeb4a2
+SHA1: c16565d4f38913c6c4e9a79708bb1a6e890e3889
+SHA256: c1f2d6b2d2a4eaecd7c6f8d1eea72cf96a00fd2166ab91a1f9b3f2a1649181c5
+Section: devel
+Priority: optional
+Description: GTSAM
+ # README - Georgia Tech Smoothing and Mapping Library
+ .
+ **Important Note**
+ .
+ As of Dec 2021, the `develop` branch is officially in &quot;Pre 4.2&quot; mode. A great new feature we will be adding in 4.2 is *hybrid inference* a la DCSLAM (Kevin Doherty et al) and we envision several API-breaking changes will happen in the discrete folder.
+ .
+ In addition, features deprecated in 4.1 will be removed. Please use the last [4.1.1 release](https://github.com/borglab/gtsam/releases/tag/4.1.1) if you need those features. However, most (not all, unfortunately) are easily converted and can be tracked down (in 4.1.1) by disabling the cmake flag `GTSAM_ALLOW_DEPRECATED_SINCE_V42`.
+ .
+ ## What is GTSAM?
+ .
+ GTSAM is a C++ library that implements smoothing and
+ mapping (SAM) in robotics and vision, using Factor Graphs and Bayes
+ Networks as the underlying computing paradigm rather than sparse
+ matrices.
+ .
+ The current support matrix is:
+ .
+ | Platform     | Compiler  | Build Status  |
+ |:------------:|:---------:|:-------------:|
+ | Ubuntu 18.04 | gcc/clang | ![Linux CI](https://github.com/borglab/gtsam/workflows/Linux%20CI/badge.svg) |
+ | macOS        | clang     | ![macOS CI](https://github.com/borglab/gtsam/workflows/macOS%20CI/badge.svg) |
+ | Windows      | MSVC      | ![Windows CI](https://github.com/borglab/gtsam/workflows/Windows%20CI/badge.svg) |
+ .
+ .
+ On top of the C++ library, GTSAM includes [wrappers for MATLAB &amp; Python](#wrappers).
+ .
+ .
+ ## Quickstart
+ .
+ In the root library folder execute:
+ .
+ ```sh
+ #!bash
+ mkdir build
+ cd build
+ cmake ..
+ make check (optional, runs unit tests)
+ make install
+ ```
+ .
+ Prerequisites:
+ .
+ - [Boost](http://www.boost.org/users/download/) &gt;= 1.65 (Ubuntu: `sudo apt-get install libboost-all-dev`)
+ - [CMake](http://www.cmake.org/cmake/resources/software.html) &gt;= 3.0 (Ubuntu: `sudo apt-get install cmake`)
+ - A modern compiler, i.e., at least gcc 4.7.3 on Linux.
+ .
+ Optional prerequisites - used automatically if findable by CMake:
+ .
+ - [Intel Threaded Building Blocks (TBB)](http://www.threadingbuildingblocks.org/) (Ubuntu: `sudo apt-get install libtbb-dev`)
+ - [Intel Math Kernel Library (MKL)](http://software.intel.com/en-us/intel-mkl) (Ubuntu: [installing using APT](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo))
+     - See [INSTALL.md](INSTALL.md) for more installation information
+     - Note that MKL may not provide a speedup in all cases. Make sure to benchmark your problem with and without MKL.
+ .
+ ## GTSAM 4 Compatibility
+ .
+ GTSAM 4 introduces several new features, most notably Expressions and a Python toolbox. It also introduces traits, a C++ technique that allows optimizing with non-GTSAM types. That opens the door to retiring geometric types such as Point2 and Point3 to pure Eigen types, which we also do. A significant change which will not trigger a compile error is that zero-initializing of Point2 and Point3 is deprecated, so please be aware that this might render functions using their default constructor incorrect.
+ .
+  There is a flag `GTSAM_ALLOW_DEPRECATED_SINCE_V42` for newly deprecated methods since the 4.2 release, which is on by default, allowing anyone to just pull version 4.2 and compile.
+ .
+ .
+ ## Wrappers
+ .
+ We provide support for [MATLAB](matlab/README.md) and [Python](python/README.md) wrappers for GTSAM. Please refer to the linked documents for more details.
+ .
+ ## Citation
+ .
+ If you are using GTSAM for academic work, please use the following citation:
+ .
+ ```bibtex
+ @software{gtsam,
+   author       = {Frank Dellaert and GTSAM Contributors},
+   title        = {borglab/gtsam},
+   month        = May,
+   year         = 2022,
+   publisher    = {Georgia Tech Borg Lab},
+   version      = {4.2a8},
+   doi          = {10.5281/zenodo.5794541},
+   url          = {https://github.com/borglab/gtsam)}}
+ }
+ ```
+ .
+ To cite the `Factor Graphs for Robot Perception` book, please use:
+ ```bibtex
+ @book{factor_graphs_for_robot_perception,
+     author={Frank Dellaert and Michael Kaess},
+     year={2017},
+     title={Factor Graphs for Robot Perception},
+     publisher={Foundations and Trends in Robotics, Vol. 6},
+     url={http://www.cs.cmu.edu/~kaess/pub/Dellaert17fnt.pdf}
+ }
+ ```
+ .
+ If you are using the IMU preintegration scheme, please cite:
+ ```bibtex
+ @book{imu_preintegration,
+     author={Christian Forster and Luca Carlone and Frank Dellaert and Davide Scaramuzza},
+     title={IMU preintegration on Manifold for Efficient Visual-Inertial Maximum-a-Posteriori Estimation},
+     year={2015}
+ }
+ ```
+ .
+ .
+ ## The Preintegrated IMU Factor
+ .
+ GTSAM includes a state of the art IMU handling scheme based on
+ .
+ - Todd Lupton and Salah Sukkarieh, _&quot;Visual-Inertial-Aided Navigation for High-Dynamic Motion in Built Environments Without Initial Conditions&quot;_, TRO, 28(1):61-76, 2012. [[link]](https://ieeexplore.ieee.org/document/6092505)
+ .
+ Our implementation improves on this using integration on the manifold, as detailed in
+ .
+ - Luca Carlone, Zsolt Kira, Chris Beall, Vadim Indelman, and Frank Dellaert, _&quot;Eliminating conditionally independent sets in factor graphs: a unifying perspective based on smart factors&quot;_, Int. Conf. on Robotics and Automation (ICRA), 2014. [[link]](https://ieeexplore.ieee.org/abstract/document/6907483)
+ - Christian Forster, Luca Carlone, Frank Dellaert, and Davide Scaramuzza, _&quot;IMU Preintegration on Manifold for Efficient Visual-Inertial Maximum-a-Posteriori Estimation&quot;_, Robotics: Science and Systems (RSS), 2015. [[link]](http://www.roboticsproceedings.org/rss11/p06.pdf)
+ .
+ If you are using the factor in academic work, please cite the publications above.
+ .
+ In GTSAM 4 a new and more efficient implementation, based on integrating on the NavState tangent space and detailed in [this document](doc/ImuFactor.pdf), is enabled by default. To switch to the RSS 2015 version, set the flag `GTSAM_TANGENT_PREINTEGRATION` to OFF.
+ .
+ .
+ ## Additional Information
+ .
+ There is a [`GTSAM users Google group`](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
+ .
+ Read about important [`GTSAM-Concepts`](GTSAM-Concepts.md) here. A primer on GTSAM Expressions,
+ which support (superfast) automatic differentiation,
+ can be found on the [GTSAM wiki on BitBucket](https://bitbucket.org/gtborg/gtsam/wiki/Home).
+ .
+ See the [`INSTALL`](INSTALL.md) file for more detailed installation instructions.
+ .
+ GTSAM is open source under the BSD license, see the [`LICENSE`](LICENSE) and [`LICENSE.BSD`](LICENSE.BSD) files.
+ .
+ Please see the [`examples/`](examples) directory and the [`USAGE`](USAGE.md) file for examples on how to use GTSAM.
+ .
+ GTSAM was developed in the lab of [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS.md).
+
+Package: libgtsam-points-cuda12.2-dev
 Version: 0.1.0
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 10725
-Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 9)
-Filename: ./libiridescence-dev_0.1.0_amd64.deb
-Size: 3245314
-MD5sum: 83b98c51e0f148f38b87739be4ce32ba
-SHA1: 74e3e38fab4f0c13a65eca1d07bb783d523d57d2
-SHA256: 51b16fa70585dcae9114362bdbf11231b5b7b7aa299543bc46ecbf4250a88780
+Installed-Size: 18207
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-cuda12.2-dev_0.1.0_amd64.deb
+Size: 4839542
+MD5sum: 165f96e5575833db0b782c80cbd47f82
+SHA1: 0711918985fbd9610ec0a8495b7a478ecdc4cfc2
+SHA256: 847ceb85b8cd3f00832e774d1e80f00bb21ba4755697f24f87afe6c80b806bc7
 Section: devel
 Priority: optional
-Description: 3D visualization library for rapid prototyping of 3D algorithms
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda12.2-dev
+Version: 0.1.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 17921
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-cuda12.2-dev_0.1.0_arm64.deb
+Size: 4772020
+MD5sum: 2414ddd86f9b21acb361ad8cc3f3b6a1
+SHA1: f736769fae3ad7288a1f139a0e4ada6a758c602d
+SHA256: 4030544c243561247c6f7b489233441b99ff397619a389584f0a4e003df53b17
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda12.5-dev
+Version: 0.1.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 18808
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-cuda12.5-dev_0.1.0_amd64.deb
+Size: 4889890
+MD5sum: ee0774058b70af93060c58f7db7a67c6
+SHA1: cf90582bfc4b19ff0fc4863c4f7d624cfefc1d06
+SHA256: 5d24c02ad98564584f2b7edfd94d651f6b78ca82e9911984128adaef0864f280
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda12.5-dev
+Version: 0.1.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 18525
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-cuda12.5-dev_0.1.0_arm64.deb
+Size: 4816830
+MD5sum: 389baba92529dc1405962fe1f6e27e08
+SHA1: ac76a7ee1e6ac00792da814f7b79da34a1965f9d
+SHA256: b2f7772a098d1ea7e1b98f8a624c044f296d300064bb3967e1673dda1a20b8dc
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-dev
+Version: 0.1.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 3514
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-dev_0.1.0_arm64.deb
+Size: 1000218
+MD5sum: d975f345b26b00f7cf7af3e62fc9087b
+SHA1: 3bc05b943c9f2b48fcdf80ccc1a5621c048c8008
+SHA256: ba98deb9312268b232ee5167690cad1045355f2e01bcde2f62744555038b6267
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-dev
+Version: 0.1.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 3732
+Depends: libgtsam-dev, libboost-filesystem1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 9)
+Filename: ./libgtsam-points-dev_0.1.0_amd64.deb
+Size: 1050104
+MD5sum: aea32b64fe22061783037d2e0014a2a9
+SHA1: 411eb8e234728daa620884429cf719ac04464c02
+SHA256: bb4e5e8cd6efabfd261d3b21271bb408ba3702768dfe2fc42666e94ba580311d
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
 
 Package: libiridescence-dev
 Version: 0.1.0
@@ -198,10 +391,25 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 10018
 Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 9)
 Filename: ./libiridescence-dev_0.1.0_arm64.deb
-Size: 3111132
-MD5sum: 0d5dd20d59c60e74ef4380afe400cb2e
-SHA1: fe5d7025edbeeeca0cfdb2705796ae07270c1028
-SHA256: 9d72a1d46386ce52d3ef09c4da8e28fbc200a0e7041172961491890f4c1076df
+Size: 3111120
+MD5sum: d21ef8a10945c3cd280be804340136bf
+SHA1: 7494b41ca7f63169d24cad744d86b1d406c3d52c
+SHA256: e355a8944a48af3c7a6a3fe339189f0a0421933b98ab614af825bc171deccc78
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 0.1.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 10725
+Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 9)
+Filename: ./libiridescence-dev_0.1.0_amd64.deb
+Size: 3245284
+MD5sum: 08b96ba55b11b3a082d2ebfa4c8b29ba
+SHA1: 32136551b2833b9f5385b7d5e4a84656ec527699
+SHA256: 5508c640ed780a2e82af943e87bcd473c1e80d17dfe6c9c78c1d745c02816c93
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
