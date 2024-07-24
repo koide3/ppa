@@ -12,28 +12,36 @@ You have to be aware of the risk of installing software from PPA that implies tr
 sudo apt install curl gpg
 ```
 
-### Ubuntu 24.04
+### Setup PPA via online script
+
+```bash
+curl -s https://koide3.github.io/ppa/setup_ppa.sh | sudo bash
+```
+
+### Setup PPA manually
+
+#### Ubuntu 24.04
 
 ```bash
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2404/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2404 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
 ```
 
-### Ubuntu 22.04
+#### Ubuntu 22.04
 
 ```bash
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2204/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2204 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
 ```
 
-### Ubuntu 20.04
+#### Ubuntu 20.04
 
 ```bash
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2004/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2004 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
 ```
 
-## Install package
+## Install packages
 
 ### Iridescence
 
