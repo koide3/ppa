@@ -52,7 +52,7 @@ sudo apt install -y libiridescence-dev
 
 ```bash
 sudo apt update
-sudo apt install -y libgtsam-dev
+sudo apt install -y libgtsam-notbb-dev
 ```
 
 ### gtsam_points
