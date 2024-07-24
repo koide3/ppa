@@ -4,3 +4,9 @@
 [submodule "packages/gtsam_points"]
 	path = packages/gtsam_points
 	url = git@github.com:koide3/gtsam_points
+[submodule "packages/glim"]
+	path = packages/glim
+	url = git@github.com:koide3/glim
+[submodule "packages/glim_ros2"]
+	path = packages/glim_ros2
+	url = git@github.com:koide3/glim_ros2
