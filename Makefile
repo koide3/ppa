@@ -1,6 +1,6 @@
 .PHONY: help
 help:
-	@echo "make iridescence|gtsam_points|all|deploy"
+	@echo "make iridescence|gtsam_points|glim_ros2|all|deploy"
 
 .PHONY: iridescence
 iridescence:
@@ -11,6 +11,11 @@ iridescence:
 gtsam_points:
 	@echo "Building gtsam_points binaries..."
 	cd packages && ./build_gtsam_points.sh
+
+.PHONY: glim_ros2
+gtsam_ros2:
+	@echo "Building gtsam_ros2 binaries..."
+	cd packages && ./build_glim_ros2.sh
 
 .PHONY: all
 all: iridescence gtsam_points

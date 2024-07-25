@@ -1,7 +1,5 @@
 #!/bin/bash
 platforms=("amd64" "arm64")
-ubuntu_images=("jammy" "noble")
-ubuntu_labels=("ubuntu2204" "ubuntu2404")
 
 declare -A pids
 declare -A labels
@@ -41,7 +39,7 @@ done
 
 for key in "${!pids[@]}"; do
   echo "Waiting for $key pid=${pids[$key]} label=${labels[$key]}"
-  wait ${pids[$key]}
+  wait ${pids[$key]} || { echo "job failed" >&2; exit; }
 done
 
 for key in "${!labels[@]}"; do
