@@ -24,8 +24,8 @@ fi
 
 # Add PPA to sources.list.d/koide3_ppa.list
 echo "ubuntu_label=$ubuntu_label"
-echo curl -s --compressed "https://koide3.github.io/ppa/$ubuntu_label/KEY.gpg" | gpg --dearmor | tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
-echo echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/$ubuntu_label ./" | tee /etc/apt/sources.list.d/koide3_ppa.list
+echo 'curl -s --compressed "https://koide3.github.io/ppa/$ubuntu_label/KEY.gpg" | gpg --dearmor | tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null'
+echo 'echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/$ubuntu_label ./" | tee /etc/apt/sources.list.d/koide3_ppa.list'
 
 curl -s --compressed "https://koide3.github.io/ppa/$ubuntu_label/KEY.gpg" | gpg --dearmor | tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/$ubuntu_label ./" | tee /etc/apt/sources.list.d/koide3_ppa.list

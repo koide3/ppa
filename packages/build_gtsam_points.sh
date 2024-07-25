@@ -1,7 +1,5 @@
 #!/bin/bash
 platforms=("amd64" "arm64")
-ubuntu_images=("jammy" "noble")
-ubuntu_labels=("ubuntu2204" "ubuntu2404")
 
 declare -A pids
 declare -A labels
