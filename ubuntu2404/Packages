@@ -3,12 +3,12 @@ Version: 4.2.0
 Architecture: amd64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
 Installed-Size: 32002
-Depends: libboost-dev (>= 1.65)
+Depends: libboost-dev (>= 1.65), libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.29), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.2.0_amd64.deb
-Size: 4071030
-MD5sum: fb6cfbe00a12d43e6c4919fd23420858
-SHA1: 1bf384e72e2baf1ccbdce062a5dd4c8f41bfa241
-SHA256: 777eb0ab0a8ea4dfeadbe95fe4959e4c22ccd2853f6a5198fce1875a696efdbf
+Size: 4071044
+MD5sum: 93422c8aefccb425b7108d79e04acec6
+SHA1: 6b9700d129924c997bb9c7bbfa0bf9463b640871
+SHA256: e00e3ba4ba42c8b27881e137ce96ad80dae68e999cbd628046d739fedbc7c3d4
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -151,12 +151,12 @@ Version: 4.2.0
 Architecture: arm64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
 Installed-Size: 30351
-Depends: libboost-dev (>= 1.65)
+Depends: libboost-dev (>= 1.65), libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.29), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.2.0_arm64.deb
-Size: 3867084
-MD5sum: e59c480d43f356842985858229583b7a
-SHA1: 6ed015d0da8ffe75aaa50d9bb0703ea7963aaa9b
-SHA256: 52cbf38d7955e2521d5876ec3ca3bda5d3c2b8533dbe188b8902c6227f286165
+Size: 3867158
+MD5sum: 341b843a621006a53af10315ffb9a363
+SHA1: 3332d41cfd885f96c1230c7a53fac86d31692ed9
+SHA256: 7b4ada0435bfe272bcf18f08d4346039390aabbe1adb04befc36fa6e7b59abda
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -331,10 +331,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 18529
 Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-points-cuda12.5-dev_1.0.1_arm64.deb
-Size: 4823512
-MD5sum: 97383c91dc8296a96d62051b86fea5f0
-SHA1: 3f6d6ed5da696c6ec79c2ec808fa1be6559a59c6
-SHA256: 9afe29ca426eb5c66c2f4fe119090c4c465efd343135cd07b61910c602db2fa9
+Size: 4823478
+MD5sum: 2c005ab3d692a5be0aa6b6cd2d20a7fd
+SHA1: 1bf8cf10d9990452c72432490bd107bf876fa37e
+SHA256: e99803839c643016b9d05b7398f490d4d785f6e79e4a792151b315703898fed6
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -346,10 +346,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 18754
 Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-points-cuda12.5-dev_1.0.1_amd64.deb
-Size: 4896586
-MD5sum: c4501063bfe9527295508452054bc61f
-SHA1: 0a57a22fcfe9d11147c571c448d050e9d61e7b1b
-SHA256: d7aac0068ae8863992a0b2473b28929d7adc50e1e4c3cd9012f674508c92aa5f
+Size: 4896558
+MD5sum: 0590a1327dbf5af50b97a53a2270fc95
+SHA1: 81c6a738d1449c19ff409fd8115afba49b15defc
+SHA256: 38ab9ba28e8b284a0de9468632a0c5ff4b375f89f2b83ae29f98eb3985ca96bc
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -391,10 +391,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 3677
 Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-points-dev_1.0.1_amd64.deb
-Size: 1051204
-MD5sum: 24284cbc3d0e95bb25afe3f86be9a5e8
-SHA1: 93b77352ad6c16a83042f1e065bd82085cab495e
-SHA256: 2115dbf47808d4f14f51278c49360392e6f048cad3f66b0b65e28338a8b0a79d
+Size: 1051200
+MD5sum: ecc7e466671e362c41c2ffa24d155bbf
+SHA1: 39ded1171f77e3aa40b0cd8bc47a3629afb7b774
+SHA256: 67103f5fe9e213603bd789ec126e2a2ccceed95a2a9bcf64a87aca5f57350f05
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -406,10 +406,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 3485
 Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-points-dev_1.0.1_arm64.deb
-Size: 992946
-MD5sum: afc1019b28879e877e5d7550476564c8
-SHA1: 4e9d6a8a0c4d12ea9e63574c4667dfdc031b7407
-SHA256: 4d84afff612c32d86c7de785a03ceca337b91f36ff946a913e39bc18c27465b3
+Size: 992950
+MD5sum: 3ff242832d709366b6f7cee1fae9e043
+SHA1: 3a848e7ab0ec725a0234daf705621c17da9cdfed
+SHA256: 4c4110ba3076ff38c62fe5862b0bf2dc6433ad51243cd203a079c4f3765cc0fd
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -419,12 +419,12 @@ Version: 0.1.1
 Architecture: arm64
 Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 10337
-Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
+Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
 Filename: ./libiridescence-dev_0.1.1_arm64.deb
-Size: 3185348
-MD5sum: 15893edea824474e5a9ef85eceedb39f
-SHA1: 25e30c69a0269117e3c5fe81ee3a762798c9c957
-SHA256: c02c0ad6c242042b957c0d06b4ac3f0e7c3f6592b099a9164535084d20fde1d6
+Size: 3185402
+MD5sum: 7590800ebb437c92acede8b64509b99b
+SHA1: d25d8df12bfc7d57c023a9f6f776ace882f907a2
+SHA256: fdbc7323e805cfed6e0f8676526be77aeef6552ddce8f090857616c7d5fa0e9f
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
@@ -434,12 +434,12 @@ Version: 0.1.1
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 10962
-Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
+Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
 Filename: ./libiridescence-dev_0.1.1_amd64.deb
-Size: 3350276
-MD5sum: 0170bdafb0a33744171a552f51ee549e
-SHA1: f09e686fa4a49381d1153ba0c95b7f0031720f4f
-SHA256: 729b472aa50e7e4bb151efbebd6db52fd1f9d63d19d11a1ed511cf8c92ebbac2
+Size: 3350288
+MD5sum: 02d87d7721c4f9c6a10ab90b92c5d3de
+SHA1: 5532aa0968b544d7f2906be7a7bc1f7d8daa13f2
+SHA256: 1c8c97824415c2b9c3f20d56b3244eb980004468fae659ce613f027113729a31
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
