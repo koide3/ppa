@@ -1,6 +1,6 @@
 # PPA
 
-## Caution
+## Precaution
 
 You have to be aware of the risk of installing software from PPA that implies trusting the author.
 
@@ -12,31 +12,23 @@ You have to be aware of the risk of installing software from PPA that implies tr
 sudo apt install curl gpg
 ```
 
-### Setup PPA via online script
+### Setup PPA
 
 ```bash
+# Choose one of the follows
+
+# Automatically select ubuntu version via online script
 curl -s https://koide3.github.io/ppa/setup_ppa.sh | sudo bash
-```
 
-### Setup PPA manually
-
-#### Ubuntu 24.04
-
-```bash
+# Manually setup PPA for Ubuntu 24.04
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2404/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2404 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
-```
 
-#### Ubuntu 22.04
-
-```bash
+# Manually setup PPA for Ubuntu 22.04
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2204/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2204 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
-```
 
-#### Ubuntu 20.04
-
-```bash
+# Manually setup PPA for Ubuntu 20.04
 curl -s --compressed "https://koide3.github.io/ppa/ubuntu2004/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/ubuntu2004 ./" | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
 ```
