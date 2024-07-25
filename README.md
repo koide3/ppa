@@ -64,3 +64,17 @@ sudo apt install -y libgtsam-points-cuda12.2-dev  # CUDA12.2
 sudo apt install -y libgtsam-points-cuda12.5-dev  # CUDA12.5
 ```
 
+### glim_ros2
+
+```bash
+sudo apt update
+
+# ROS2 jazzy
+sudo apt install -y ros-jazzy-glim-ros            # No CUDA
+sudo apt install -y ros-jazzy-glim-ros-cuda12.5   # CUDA12.5
+
+# ROS2 humble
+sudo apt install -y ros-humble-glim-ros           # No CUDA
+sudo apt install -y ros-humble-glim-ros-cuda12.5  # CUDA12.5
+```
+

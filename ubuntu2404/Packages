@@ -446,15 +446,45 @@ Description: 3D visualization library for rapid prototyping of 3D algorithms
 
 Package: ros-jazzy-glim
 Version: 1.0.1-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 5921
+Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libgl1, libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim_1.0.1-0noble_arm64.deb
+Size: 1064806
+MD5sum: d8d66e5b4ccfbef2e79369a77343522f
+SHA1: 6fb10330cec8ca0c8a7324fb935dac7d2f605758
+SHA256: b4fc728d493b5f09806cc5f100e8de9e8e98755fc014c3843710153f8c63a8c8
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim
+Version: 1.0.1-0noble
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 5583
 Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libgl1, libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
 Filename: ./ros-jazzy-glim_1.0.1-0noble_amd64.deb
-Size: 1098752
-MD5sum: 476f41e164f931c616b4139a9a1561b1
-SHA1: ade7c928707038b3ac79a02eda11065269ae74f9
-SHA256: b1f555bc1ba677375260db35bb536b0ecd9ec5ac50da803487f2222682762c20
+Size: 1090680
+MD5sum: 493adbceb0d08a0605439ef3f061f859
+SHA1: 45ebff90648a466289c5a62fe70a01bbf86570b8
+SHA256: f1450406b3d451ccf79f31481cf4a274c857a8b81c54584cdee97940dd738b35
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-cuda12.5
+Version: 1.0.1-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 5990
+Depends: libiridescence-dev, libgtsam-points-cuda12.5-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libgl1, libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim-cuda12.5_1.0.1-0noble_arm64.deb
+Size: 1083638
+MD5sum: 2132f431af2c710e34605cdac3700f21
+SHA1: 570e56f74c7ad091af5ef1ebb0185e72bf46cf94
+SHA256: b4c0efc07110a5c2e7bc92de0089d4d2047413b2ed70f5c978c6f81944f01735
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -466,13 +496,28 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 5649
 Depends: libiridescence-dev, libgtsam-points-cuda12.5-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libgl1, libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
 Filename: ./ros-jazzy-glim-cuda12.5_1.0.1-0noble_amd64.deb
-Size: 1116328
-MD5sum: 737d2cb1a780046c5cb5d95ba26f7526
-SHA1: cdc4f8425cfea68d3d5d9f3149195d92eece8806
-SHA256: f522d402bd641e9ec6efc32a5d70fc00e7dd8253d82a5a56dca0c3e68385f5a3
+Size: 1116332
+MD5sum: 395b3eff183512f0d756678677e21286
+SHA1: 761c13bc3ea25adb740a122212d1f265f9895155
+SHA256: c687138d930ecff50f4fe4a72299ed0df600e4d8104bee5437f50bee6c7d8264
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-ros
+Version: 1.0.1-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2519
+Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros_1.0.1-0noble_arm64.deb
+Size: 416560
+MD5sum: 6885019270bb89d284162fccfc295a59
+SHA1: 8e18e4ec871c7a5c5948f95f30b7586228f7288d
+SHA256: 54bf72a76e84e91e5761ad21cd6f87046006a9a4c6e455af380a69f4e0c4cf47
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-jazzy-glim-ros
 Version: 1.0.1-0noble
@@ -481,10 +526,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 2343
 Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
 Filename: ./ros-jazzy-glim-ros_1.0.1-0noble_amd64.deb
-Size: 441078
-MD5sum: 1906e0d74b43bfb2aab6d898da9ddb34
-SHA1: f8448403521c40071eca2003c15101de85903d39
-SHA256: 45fa45f41ed192021c47814a8215a45bbca78773e022bb64ddb4aedd03f53e48
+Size: 441056
+MD5sum: 41ade2e5dc17f3e300d25994ca85100f
+SHA1: 8b110f99fd0e9f55b3cf010ec87397c059109233
+SHA256: c59e5885ef0b0428765e31048c2a2f26dd6ab85c216fb5fc13e2af241241f558
 Section: misc
 Priority: optional
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
@@ -496,10 +541,25 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 2343
 Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda12.5, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
 Filename: ./ros-jazzy-glim-ros-cuda12.5_1.0.1-0noble_amd64.deb
-Size: 441200
-MD5sum: ab5a24cd7e5b2d8c743dcd2a2bd9a3ed
-SHA1: 76aee4732d20069a2a13d841915bacbe110359a8
-SHA256: e32457739f6cc3c112c536f316c2dfbbd6cdf397301b6bbd01d0d7681e5b09bf
+Size: 441256
+MD5sum: 50c429bc9c08db5779158f1ec98424b5
+SHA1: 397a11ee4f9b468306d94c46abda6239997b2b54
+SHA256: 031209d2eb9c28e641ca605416e8b44c136954ef0f90d12607522ec367ed66b3
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros-cuda12.5
+Version: 1.0.1-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2519
+Depends: libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda12.5, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros-cuda12.5_1.0.1-0noble_arm64.deb
+Size: 417210
+MD5sum: 798b5021e3e84278ad899c186882a07a
+SHA1: 2fb10bf6ff98543061bc92ba7bd8a3eb467df71c
+SHA256: ce8c33d6f31c25631f4072c2a223594abf33b7d2d7dcec6e2618e3994f74835f
 Section: misc
 Priority: optional
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints

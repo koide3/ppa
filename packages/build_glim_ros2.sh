@@ -7,7 +7,7 @@ cp -R ../ubuntu2204 local_ppa/
 cp -R ../ubuntu2404 local_ppa/
 cp -R ../setup_ppa.sh local_ppa/
 
-platforms=("amd64")
+platforms=("amd64" "arm64")
 declare -A pids
 declare -A labels
 
@@ -16,6 +16,7 @@ configurations=(
   "ubuntu2404 jazzy nvidia/cuda:12.5.1-devel-ubuntu24.04 Dockerfile.ros2 -cuda12.5"
   "ubuntu2204 humble nvidia/cuda:12.5.1-devel-ubuntu22.04 Dockerfile.ros2"
   "ubuntu2204 humble nvidia/cuda:12.5.1-devel-ubuntu22.04 Dockerfile.ros2 -cuda12.5"
+  "ubuntu2204 humble nvidia/cuda:12.2.2-devel-ubuntu22.04 Dockerfile.ros2 -cuda12.2"
 )
 
 for platform in "${platforms[@]}"; do
