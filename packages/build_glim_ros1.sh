@@ -7,14 +7,14 @@ cp -R ../ubuntu2204 local_ppa/
 cp -R ../ubuntu2404 local_ppa/
 cp -R ../setup_ppa.sh local_ppa/
 
-platforms=("amd64")
+platforms=("amd64" "arm64")
 declare -A pids
 declare -A labels
 
 configurations=(
   "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1"
-  # "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.2"
-  # "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.5"
+  "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.2"
+  "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.5"
 )
 
 for platform in "${platforms[@]}"; do
