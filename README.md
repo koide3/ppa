@@ -75,6 +75,12 @@ sudo apt install -y ros-jazzy-glim-ros-cuda12.5   # CUDA12.5
 
 # ROS2 humble
 sudo apt install -y ros-humble-glim-ros           # No CUDA
+sudo apt install -y ros-humble-glim-ros-cuda12.2  # CUDA12.2
 sudo apt install -y ros-humble-glim-ros-cuda12.5  # CUDA12.5
+
+# ROS1 noetic
+sudo apt install -y ros-noetic-glim-ros           # No CUDA
+sudo apt install -y ros-noetic-glim-ros-cuda12.2  # CUDA12.2
+sudo apt install -y ros-noetic-glim-ros-cuda12.5  # CUDA12.5
 ```
 
