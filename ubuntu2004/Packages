@@ -508,13 +508,13 @@ Package: ros-noetic-glim
 Version: 1.0.1-0focal
 Architecture: arm64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 7912
+Installed-Size: 7941
 Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim_1.0.1-0focal_arm64.deb
-Size: 1152348
-MD5sum: e351c16a8779bc8c423dc643905eb15b
-SHA1: ff1fa3f889b106fa5669103be9b4fa1ed145d26e
-SHA256: 2ded39cf80d1c3912176443029485645d79efe61461838a0d4002c64ed49577b
+Size: 1156564
+MD5sum: 9fea658584d891c10cd1bb8b34b8e461
+SHA1: 4755ae8aece8cec237378d4edb0520d42a90fbc4
+SHA256: 1ae9d542a519c60670a2203087fdd1f74dd4a80b82b5e8aa062e32f1c9927078
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -523,13 +523,13 @@ Package: ros-noetic-glim
 Version: 1.0.1-0focal
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 8194
+Installed-Size: 8223
 Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim_1.0.1-0focal_amd64.deb
-Size: 1212412
-MD5sum: 8036a77f2a153aa7497900da4cbb0d79
-SHA1: b91011d51a0da94879cac27d9ddbb9da140edaa1
-SHA256: 962d9e49419158ebf87f02537919cb0660662dc636d1d39feb16af57a1f560f7
+Size: 1213348
+MD5sum: ce4dc992ed131c70a20c8517d6e14c1f
+SHA1: a6fe0a5ddccbd844cd8816718426593469589f72
+SHA256: a98bee86be48e7bc21e1aef531648ba228ba192f58f27d7074279b7a89847936
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -538,13 +538,13 @@ Package: ros-noetic-glim-cuda12.2
 Version: 1.0.1-0focal
 Architecture: arm64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 7980
+Installed-Size: 8009
 Depends: libiridescence-dev, libgtsam-points-cuda12.2-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim-cuda12.2_1.0.1-0focal_arm64.deb
-Size: 1161284
-MD5sum: 645787e9be2de417775dded0477e2771
-SHA1: 0bf11e11b9587d9b782c693d3dab1d2cdfd5feed
-SHA256: d85aa8694a15a531ecee63250d48c472e6cc12bf51d2e6865c4b395e1f71a35c
+Size: 1169424
+MD5sum: 918a07481912083dad0664086e7260ec
+SHA1: fd361bf5931561914e2518fe123dcc69436a5489
+SHA256: 6ffa237edb63b71d3c918646f15d3fa1bcd8c9ad26bd8e81d21066dc048e4d50
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -553,13 +553,13 @@ Package: ros-noetic-glim-cuda12.2
 Version: 1.0.1-0focal
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 8271
+Installed-Size: 8300
 Depends: libiridescence-dev, libgtsam-points-cuda12.2-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim-cuda12.2_1.0.1-0focal_amd64.deb
-Size: 1227320
-MD5sum: 559125e7f6f0de19d88790267ed0b2ea
-SHA1: 1480922198dea833cbf0d85a6b823bb8edf1f057
-SHA256: 5e6c7cef72b4e4d72eaeb44906a3ce65988e73d66ce3b708c68157c1a62cd23a
+Size: 1230400
+MD5sum: f2e890d020bcc414e720a842b984b0fb
+SHA1: f96a2388e1bc4abf896aba628eb899650892c8d1
+SHA256: 28a5a790f8fad96f235a7db3a949840c308c6e5a2e2889ed830df5e956035846
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -568,13 +568,13 @@ Package: ros-noetic-glim-cuda12.5
 Version: 1.0.1-0focal
 Architecture: arm64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 7980
+Installed-Size: 8009
 Depends: libiridescence-dev, libgtsam-points-cuda12.5-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim-cuda12.5_1.0.1-0focal_arm64.deb
-Size: 1161288
-MD5sum: bb20863956e12d8030ec7e963b86fd56
-SHA1: a427a7f0e5d11d1fc542ed9afbcb009dc4ef7d61
-SHA256: a2aeba37659ab09b1216406b4e2a6bc1fd4e7d08fef1fb4d2fb4c2454eb50efa
+Size: 1164952
+MD5sum: c210c2be4a45e7f9d378c162fac80e41
+SHA1: 53bf42d822c0f14755e0e684fbbf4560b29b00f6
+SHA256: 3feb2e2b3e0e48a752fc29e0b0e487d2a74be20ce70a9a212d7c9c2083acfa13
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -583,13 +583,13 @@ Package: ros-noetic-glim-cuda12.5
 Version: 1.0.1-0focal
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 8271
+Installed-Size: 8300
 Depends: libiridescence-dev, libgtsam-points-cuda12.5-dev, libboost-filesystem1.71.0, libboost-serialization1.71.0, libc6 (>= 2.29), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libopencv-core4.2 (>= 4.2.0+dfsg), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), libfmt-dev, libspdlog-dev
 Filename: ./ros-noetic-glim-cuda12.5_1.0.1-0focal_amd64.deb
-Size: 1227316
-MD5sum: dea18212baa9494a276b7b3a414dbf26
-SHA1: 413c5a503bc7e887c33e4ce46e72c7c23c18fa62
-SHA256: ad716da5f41a1546e5bf4c9cd6e12bb79c0b33b88db14b5f526909e20d5d7975
+Size: 1230656
+MD5sum: 0f0d4ecb1c65ec216c31f5dd8d3eab94
+SHA1: 7219d6de3cbf8ec86b4cd532e2ac216703e17217
+SHA256: c86a8233fce5a8eaa15af6a0f6c6087d03f741bcd3667d7827c2ed6f05011cc1
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU mapping framework
@@ -602,9 +602,9 @@ Installed-Size: 1105
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 3.0), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros_1.0.1-0focal_amd64.deb
 Size: 217132
-MD5sum: bfdcad5755600b124369653ae5bf3f50
-SHA1: ac2672f8a241400ba911ad49ca0309bcf76c0fec
-SHA256: df000a1b58d61f428cf34e057a14b4dccf909f241588a142432902376d5595f6
+MD5sum: 8b1344acd3cd5c76439b5c2ad9582e0e
+SHA1: 11b19136eaec2c1f33900f6d69c9f449a86728d0
+SHA256: d60886c25384deeaeac240c19b5bd6facfdcbcd08549f7437636ee7921650dbb
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework
@@ -616,10 +616,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 1016
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 4.5), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros_1.0.1-0focal_arm64.deb
-Size: 193132
-MD5sum: 0238821396ac5189bd9c46bb622eaee1
-SHA1: 91db5f136ec5da2587de7c8e0d196fc26480e3c6
-SHA256: 3db294efe4596ff045e5418c65262620e1694a2ab7a1732bc8407bd4f9cf7ed5
+Size: 193192
+MD5sum: 4835c15d530741859b2fdcc78b369798
+SHA1: 6c8ac3de62d86a4062460a65caafd8cec0b30cf7
+SHA256: 94d9eb8b7f21a43c7e6e37dd74c0262f8ad214deff894293573e85c7e996dc04
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework
@@ -631,10 +631,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 1105
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 3.0), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim-cuda12.2, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros-cuda12.2_1.0.1-0focal_amd64.deb
-Size: 217480
-MD5sum: c26e495fd4520a6ec8375dfec31d7036
-SHA1: f5011e12cc85850e4d7ff3dd8ee213986efdf11b
-SHA256: 0b7efee427a98c22f7c96a5aad4d70a9a7edbd5cfb2f3505e7f3b6770196a4f3
+Size: 217336
+MD5sum: f853b850e2dd27c7da7f3075cfde82d9
+SHA1: 1759a3645006e9527aaaa0d01257297f6191d347
+SHA256: 01ae7a23afe68a593e89f4415d9a5bd3746ebc037dd1a9a5bbe2092339143961
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework
@@ -646,10 +646,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 1020
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 4.5), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim-cuda12.2, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros-cuda12.2_1.0.1-0focal_arm64.deb
-Size: 193784
-MD5sum: 9980d5d0ff9a3797c899add13eaa0b1b
-SHA1: d6472aa840f2cf790d6d26ef359fcad917ed0bf6
-SHA256: 57c54356b12628eee8a7bd472831a53906c1357ef6b91356b5dcf9c78bbe05df
+Size: 193880
+MD5sum: 7f7af2e89896de68b101d1361af59d25
+SHA1: 1ca4fec403617f058db4b7203ab2f6b1cb39bbca
+SHA256: aaebef45c01381f359b3df244ecc2ebc9f947bd078426c41f7ec27c6a251d75b
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework
@@ -661,10 +661,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 1020
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 4.5), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim-cuda12.5, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros-cuda12.5_1.0.1-0focal_arm64.deb
-Size: 193820
-MD5sum: 1a9f6287f0e9a8b76e1203b1d7869e6b
-SHA1: 212b9495a4bd12b9b0737523a1f62e7afd2b41c1
-SHA256: 478878d6878fafdab66053c5f058f47740dd27e01e8b4d90bf7b3753d4605e07
+Size: 193944
+MD5sum: 456648442fe98aaf072961c9c6080205
+SHA1: 45c126ac3f7b274a3f155f1cb1a818781c7afc73
+SHA256: e11c4406f992933a06cfc7e4ba5c8a896d72a4aa04ba144d4787e3f54d5c0c7e
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework
@@ -676,10 +676,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 1105
 Depends: libc6 (>= 2.27), libgcc-s1 (>= 3.0), libspdlog1 (>= 1.5.0), libstdc++6 (>= 9), ros-noetic-cv-bridge, ros-noetic-glim-cuda12.5, ros-noetic-image-transport, ros-noetic-rosbag, ros-noetic-roslib, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
 Filename: ./ros-noetic-glim-ros-cuda12.5_1.0.1-0focal_amd64.deb
-Size: 217376
-MD5sum: c3ce258d4090188456a09ebcbae6a57a
-SHA1: 8c79cb84dca725c3cb4cfa106f4411bc3c533bc9
-SHA256: 8026b7213047c4d8148620883305e7c016a4d9dedc84fab6741d9360c86879fd
+Size: 217720
+MD5sum: 6864dd81d092999e5e3a90734c3e7ba7
+SHA1: 8be3d7ac1b63fb50e43c898074d88532d0e7338c
+SHA256: 2827dc5283501f26380cbb8a3f9e273c7b6f3e0b4e5f63490a9a33432856a47e
 Section: misc
 Priority: optional
 Description: 3D LiDAR-IMU Mapping Framework

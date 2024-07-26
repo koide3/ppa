@@ -13,7 +13,7 @@ declare -A labels
 
 configurations=(
   "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1"
-  "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.2"
+  "ubuntu2004 noetic nvidia/cuda:12.2.2-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.2"
   "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.5"
 )
 
