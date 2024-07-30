@@ -1,6 +1,7 @@
 #!/bin/bash
 platforms=("amd64" "arm64")
 
+set -e
 declare -A pids
 declare -A labels
 

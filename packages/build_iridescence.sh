@@ -3,6 +3,7 @@ platforms=("amd64" "arm64")
 ubuntu_images=("focal" "jammy" "noble")
 ubuntu_labels=("ubuntu2004" "ubuntu2204" "ubuntu2404")
 
+set -e
 declare -A pids
 declare -A labels
 
