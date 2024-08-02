@@ -23,7 +23,7 @@ glim_ros2:
 	cd packages && ./build_glim_ros2.sh
 
 .PHONY: all
-all: iridescence gtsam_points glim_ros2
+all: iridescence gtsam_points glim_ros1 glim_ros2
 	@echo "Building all binaries..."
 
 .PHONY: deploy
