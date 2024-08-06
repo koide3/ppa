@@ -53,5 +53,5 @@ done
 for key in "${!labels[@]}"; do
   echo "Extracting deb file from $key"
   label=${labels[$key]}
-  docker run --rm -v $(realpath $label):/output $key /bin/bash -c "cp /root/*.deb /output/"
+  docker run --rm -v $(realpath $label):/output $key /bin/bash -c "cp /root/*.deb /output/ && chmod -R 777 /output/*"
 done

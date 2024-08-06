@@ -27,5 +27,5 @@ done
 for key in "${!labels[@]}"; do
   echo "Extracting deb file from $key"
   label=${labels[$key]}
-  docker run --rm -v $(realpath $label):/output $key /bin/bash -c "cp /root/iridescence/build/libiridescence*.deb /output/"
+  docker run --rm -v $(realpath $label):/output $key /bin/bash -c "cp /root/iridescence/build/libiridescence*.deb /output/ && chmod 777 /output/*"
 done
