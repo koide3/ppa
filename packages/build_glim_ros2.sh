@@ -8,6 +8,7 @@ cp -R ../ubuntu2404 local_ppa/
 cp -R ../setup_ppa.sh local_ppa/
 
 platforms=("amd64" "arm64")
+# platforms=("amd64")
 set -e
 declare -A pids
 declare -A labels
