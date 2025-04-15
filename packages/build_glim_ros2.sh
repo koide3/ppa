@@ -8,7 +8,6 @@ cp -R ../ubuntu2404 local_ppa/
 cp -R ../setup_ppa.sh local_ppa/
 
 platforms=("amd64" "arm64")
-# platforms=("amd64")
 set -e
 declare -A pids
 declare -A labels
@@ -16,7 +15,9 @@ declare -A labels
 configurations=(
   "ubuntu2404 jazzy nvidia/cuda:12.5.1-devel-ubuntu24.04 Dockerfile.ros2"
   "ubuntu2404 jazzy nvidia/cuda:12.5.1-devel-ubuntu24.04 Dockerfile.ros2 -cuda12.5"
+  "ubuntu2404 jazzy nvidia/cuda:12.6.3-devel-ubuntu24.04 Dockerfile.ros2 -cuda12.6"
   "ubuntu2204 humble nvidia/cuda:12.5.1-devel-ubuntu22.04 Dockerfile.ros2"
+  "ubuntu2204 humble nvidia/cuda:12.6.3-devel-ubuntu22.04 Dockerfile.ros2 -cuda12.6"
   "ubuntu2204 humble nvidia/cuda:12.5.1-devel-ubuntu22.04 Dockerfile.ros2 -cuda12.5"
   "ubuntu2204 humble nvidia/cuda:12.2.2-devel-ubuntu22.04 Dockerfile.ros2 -cuda12.2"
 )

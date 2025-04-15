@@ -6,7 +6,9 @@ declare -A pids
 declare -A labels
 
 configurations=(
+  "ubuntu:noble ubuntu2404 nvidia/cuda:12.6.3-devel-ubuntu24.04 12.6 Dockerfile"
   "ubuntu:noble ubuntu2404 nvidia/cuda:12.5.1-devel-ubuntu24.04 12.5 Dockerfile"
+  "ubuntu:jammy ubuntu2204 nvidia/cuda:12.6.3-devel-ubuntu22.04 12.6 Dockerfile"
   "ubuntu:jammy ubuntu2204 nvidia/cuda:12.5.1-devel-ubuntu22.04 12.5 Dockerfile"
   "ubuntu:jammy ubuntu2204 nvidia/cuda:12.2.2-devel-ubuntu22.04 12.2 Dockerfile"
   "ubuntu:focal ubuntu2004 nvidia/cuda:12.5.1-devel-ubuntu20.04 12.5 Dockerfile.focal"
