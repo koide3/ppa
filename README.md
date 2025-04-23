@@ -62,6 +62,7 @@ sudo apt update
 sudo apt install -y libgtsam-points-dev           # No CUDA
 sudo apt install -y libgtsam-points-cuda12.2-dev  # CUDA12.2
 sudo apt install -y libgtsam-points-cuda12.5-dev  # CUDA12.5
+sudo apt install -y libgtsam-points-cuda12.6-dev  # CUDA12.6
 ```
 
 ### glim_ros1
@@ -83,15 +84,12 @@ sudo apt update
 # ROS2 jazzy
 sudo apt install -y ros-jazzy-glim-ros            # No CUDA
 sudo apt install -y ros-jazzy-glim-ros-cuda12.5   # CUDA12.5
+sudo apt install -y ros-jazzy-glim-ros-cuda12.6   # CUDA12.6
 
 # ROS2 humble
 sudo apt install -y ros-humble-glim-ros           # No CUDA
 sudo apt install -y ros-humble-glim-ros-cuda12.2  # CUDA12.2
 sudo apt install -y ros-humble-glim-ros-cuda12.5  # CUDA12.5
-
-# ROS1 noetic
-sudo apt install -y ros-noetic-glim-ros           # No CUDA
-sudo apt install -y ros-noetic-glim-ros-cuda12.2  # CUDA12.2
-sudo apt install -y ros-noetic-glim-ros-cuda12.5  # CUDA12.5
+sudo apt install -y ros-humble-glim-ros-cuda12.6  # CUDA12.6
 ```
 
