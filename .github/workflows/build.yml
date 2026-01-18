@@ -1,0 +1,224 @@
+name: Build
+
+on:
+  push:
+    branches: [ master, ci ]
+    paths-ignore: '**.md'
+  pull_request:
+    branches: [ master ]
+    paths-ignore: '**.md'
+  repository_dispatch:
+    types: [trigger-event]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  ######## Iridescence ########
+  build_iridescence_amd64:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build Iridescence ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
+        run: cd packages && ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: iridescence-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+  
+  build_iridescence_arm64:
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404" },
+          { "platform": "arm64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build Iridescence ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
+        run: cd packages && ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: iridescence-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+
+  ######## gtsam_points ########
+  build_gtsam_points_amd64:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1" },
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
+        run: cd packages && ./build_gtsam_points.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: gtsam_points-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}-${{ matrix.CONFIG.cuda_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+
+  build_gtsam_points_arm64:
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1" },
+          { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6" },
+          { "platform": "arm64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1" },
+          { "platform": "arm64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6" },
+          { "platform": "arm64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
+        run: cd packages && ./build_gtsam_points.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: gtsam_points-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}-${{ matrix.CONFIG.cuda_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/* 
+
+  ######## glim_ros2 ########
+  build_glim_ros2_amd64:
+    needs: [build_iridescence_amd64, build_gtsam_points_amd64]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "amd64", "ubuntu_label": "ubuntu2404", "ros_distro": "jazzy", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1" },
+          { "platform": "amd64", "ubuntu_label": "ubuntu2404", "ros_distro": "jazzy", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6" },
+          { "platform": "amd64", "ubuntu_label": "ubuntu2204", "ros_distro": "humble", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1" },
+          { "platform": "amd64", "ubuntu_label": "ubuntu2204", "ros_distro": "humble", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6" },
+          { "platform": "amd64", "ubuntu_label": "ubuntu2204", "ros_distro": "humble", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: |
+            iridescence-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}
+            gtsam_points-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}-${{ matrix.CONFIG.cuda_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}
+          merge-multiple: true
+
+      - name: Build glim_ros2 ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_label }}
+        run: cd packages && ./build_glim_ros2.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.ros_distro }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: glim_ros2-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+
+  collect_artifacts:
+    needs: [build_iridescence_amd64, build_iridescence_arm64, build_gtsam_points_amd64, build_gtsam_points_arm64, build_glim_ros2_amd64]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download ubuntu2404 artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: iridescence-*-ubuntu2404
+          path: ubuntu2404
+          merge-multiple: true
+      - name: Download ubuntu2204 artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: iridescence-*-ubuntu2204
+          path: ubuntu2204
+          merge-multiple: true
+      - name: Upload all packages
+        uses: actions/upload-artifact@v6
+        with:
+          name: packages
+          path: |
+            ubuntu2404/*
+            ubuntu2204/*
+
+  #   needs: build
+  #   strategy:
+  #     matrix:
+  #       repo: ['koide3/glim_ros2']
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Repository Dispatch
+  #       uses: peter-evans/repository-dispatch@v3
+  #       with:
+  #         token: ${{ secrets.GH_PAT }}
+  #         repository: ${{ matrix.repo }}
+  #         event-type: trigger-event
