@@ -6,10 +6,10 @@ permissions:
 on:
   push:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/gtsam'
   pull_request:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/gtsam'
   repository_dispatch:
     types: [trigger-event]
 
@@ -39,8 +39,11 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build GTSAM ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
-      
+        run: |
+          cd packages
+          ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
@@ -68,8 +71,11 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build GTSAM ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
-      
+        run: |
+          cd packages
+          ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
@@ -114,16 +120,16 @@ jobs:
 
       - name: Scan packages and generate Release files
         run: |
-          cd ubuntu2404
+          cd ubuntu2404 && ls
           dpkg-scanpackages --multiversion . > Packages
           gzip -k -f Packages
           apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
-          cd ../ubuntu2204
+          cd ../ubuntu2204 && ls
           dpkg-scanpackages --multiversion . > Packages
-          apt-ftparchive release . > Release
           gzip -k -f Packages
+          apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
           cd ..
@@ -140,24 +146,12 @@ jobs:
             git commit -m "Add GTSAM packages from build_gtsam workflow"
             git push origin ppa
           fi
-  
-      # - name: Upload all packages
-      #   uses: actions/upload-artifact@v6
-      #   with:
-      #     name: packages
-      #     path: |
-      #       ubuntu2404/*
-      #       ubuntu2204/*
 
-  #   needs: build
-  #   strategy:
-  #     matrix:
-  #       repo: ['koide3/glim_ros2']
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Repository Dispatch
-  #       uses: peter-evans/repository-dispatch@v3
-  #       with:
-  #         token: ${{ secrets.GH_PAT }}
-  #         repository: ${{ matrix.repo }}
-  #         event-type: trigger-event
+  dispatch:
+    needs: collect_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          event-type: build-gtsam-points

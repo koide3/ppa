@@ -5,13 +5,13 @@ permissions:
 
 on:
   push:
-    branches: [ main, ci ]
-    paths-ignore: '**.md'
+    branches: [ main ]
+    paths: 'packages/gtsam_points'
   pull_request:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/gtsam_points'
   repository_dispatch:
-    types: [trigger-event]
+    types: [trigger-event, build-gtsam-points]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,7 +44,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
-        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+        run: |
+          cd packages
+          ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
@@ -78,7 +81,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
-        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+        run: |
+          cd packages
+          ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
@@ -111,29 +117,29 @@ jobs:
       - name: Download ubuntu2404 artifacts
         uses: actions/download-artifact@v7
         with:
-          pattern: "*-ubuntu2404"
+          pattern: "*-ubuntu2404*"
           path: ubuntu2404
           merge-multiple: true
 
       - name: Download ubuntu2204 artifacts
         uses: actions/download-artifact@v7
         with:
-          pattern: "*-ubuntu2204"
+          pattern: "*-ubuntu2204*"
           path: ubuntu2204
           merge-multiple: true
 
       - name: Scan packages and generate Release files
         run: |
-          cd ubuntu2404
+          cd ubuntu2404 && ls
           dpkg-scanpackages --multiversion . > Packages
           gzip -k -f Packages
           apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
-          cd ../ubuntu2204
+          cd ../ubuntu2204 && ls
           dpkg-scanpackages --multiversion . > Packages
-          apt-ftparchive release . > Release
           gzip -k -f Packages
+          apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
           cd ..
@@ -150,3 +156,12 @@ jobs:
             git commit -m "Add gtsam_points packages from build_gtsam_points workflow"
             git push origin ppa
           fi
+
+  dispatch:
+    needs: collect_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          event-type: build-glim-ros2
