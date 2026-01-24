@@ -5,13 +5,13 @@ permissions:
 
 on:
   push:
-    branches: [ main, ci ]
-    paths-ignore: '**.md'
+    branches: [ main ]
+    paths: 'packages/glim_ros2'
   pull_request:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/glim_ros2'
   repository_dispatch:
-    types: [trigger-event]
+    types: [trigger-event, build-glim-ros2]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

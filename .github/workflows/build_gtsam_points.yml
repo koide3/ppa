@@ -6,12 +6,12 @@ permissions:
 on:
   push:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/gtsam_points'
   pull_request:
     branches: [ main ]
-    paths-ignore: '**.md'
+    paths: 'packages/gtsam_points'
   repository_dispatch:
-    types: [trigger-event]
+    types: [trigger-event, build-gtsam-points]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -156,3 +156,12 @@ jobs:
             git commit -m "Add gtsam_points packages from build_gtsam_points workflow"
             git push origin ppa
           fi
+
+  dispatch:
+    needs: collect_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          event-type: build-glim-ros2
