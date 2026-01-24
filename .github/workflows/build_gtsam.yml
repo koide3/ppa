@@ -39,8 +39,11 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build GTSAM ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
-      
+        run: |
+          cd packages
+          ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
@@ -68,8 +71,11 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build GTSAM ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
-      
+        run: |
+          cd packages
+          ./build_gtsam.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
@@ -141,23 +147,3 @@ jobs:
             git push origin ppa
           fi
   
-      # - name: Upload all packages
-      #   uses: actions/upload-artifact@v6
-      #   with:
-      #     name: packages
-      #     path: |
-      #       ubuntu2404/*
-      #       ubuntu2204/*
-
-  #   needs: build
-  #   strategy:
-  #     matrix:
-  #       repo: ['koide3/glim_ros2']
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Repository Dispatch
-  #       uses: peter-evans/repository-dispatch@v3
-  #       with:
-  #         token: ${{ secrets.GH_PAT }}
-  #         repository: ${{ matrix.repo }}
-  #         event-type: trigger-event

@@ -39,7 +39,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Iridescence ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+        run: |
+          cd packages
+          ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
@@ -68,7 +71,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Iridescence ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }}
-        run: cd packages && ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+        run: |
+          cd packages
+          ./build_iridescence.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
