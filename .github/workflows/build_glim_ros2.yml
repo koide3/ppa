@@ -80,7 +80,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-       - name: Build glim_ros2 ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
+      - name: Build glim_ros2 ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
         run: |
           cd packages
           ./build_glim_ros2.sh ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.ros_distro }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
