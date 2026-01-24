@@ -138,8 +138,8 @@ jobs:
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
           cd ../ubuntu2204 && ls
           dpkg-scanpackages --multiversion . > Packages
-          apt-ftparchive release . > Release
           gzip -k -f Packages
+          apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
           cd ..

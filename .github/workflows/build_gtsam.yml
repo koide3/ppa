@@ -114,16 +114,16 @@ jobs:
 
       - name: Scan packages and generate Release files
         run: |
-          cd ubuntu2404
+          cd ubuntu2404 && ls
           dpkg-scanpackages --multiversion . > Packages
           gzip -k -f Packages
           apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
-          cd ../ubuntu2204
+          cd ../ubuntu2204 && ls
           dpkg-scanpackages --multiversion . > Packages
-          apt-ftparchive release . > Release
           gzip -k -f Packages
+          apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
           cd ..
