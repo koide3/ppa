@@ -14,7 +14,7 @@ docker buildx build \
   -f docker/Dockerfile.gtsam_points_cuda \
   --platform linux/$platform \
   --build-arg="BASE_IMAGE=ubuntu:$ubuntu_image" \
-  --build-arg="CUDA_BASE_IMAGE=$cuda_base_image" \
+  --build-arg="CUDA_BASE_IMAGE=$nvidia_image" \
   --build-arg="CUDA_LABEL=$cuda_label" \
   --target extract \
   gtsam_points
