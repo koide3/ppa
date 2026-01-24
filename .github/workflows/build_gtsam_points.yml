@@ -44,7 +44,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
-        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+        run: |
+          cd packages
+          ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
@@ -78,7 +81,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
-        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+        run: |
+          cd packages
+          ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+          ls ${{ matrix.CONFIG.ubuntu_label }}
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
@@ -111,26 +117,26 @@ jobs:
       - name: Download ubuntu2404 artifacts
         uses: actions/download-artifact@v7
         with:
-          pattern: "*-ubuntu2404"
+          pattern: "*-ubuntu2404*"
           path: ubuntu2404
           merge-multiple: true
 
       - name: Download ubuntu2204 artifacts
         uses: actions/download-artifact@v7
         with:
-          pattern: "*-ubuntu2204"
+          pattern: "*-ubuntu2204*"
           path: ubuntu2204
           merge-multiple: true
 
       - name: Scan packages and generate Release files
         run: |
-          cd ubuntu2404
+          cd ubuntu2404 && ls
           dpkg-scanpackages --multiversion . > Packages
           gzip -k -f Packages
           apt-ftparchive release . > Release
           gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
           gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
-          cd ../ubuntu2204
+          cd ../ubuntu2204 && ls
           dpkg-scanpackages --multiversion . > Packages
           apt-ftparchive release . > Release
           gzip -k -f Packages
