@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends
 RUN apt-get install -y --no-install-recommends build-essential  \
     git cmake libeigen3-dev ca-certificates libboost-all-dev libmetis-dev
-RUN apt-get install -y --no-install-recommends libomp-dev libtbb-dev file gnupg ca-certificates
+RUN apt-get install -y --no-install-recommends libomp-dev libtbb-dev file gpg ca-certificates
 
 RUN curl -s https://koide3.github.io/ppa/setup_ppa.sh | bash
 RUN apt-get update && apt-get install -y --no-install-recommends libgtsam-notbb-dev
