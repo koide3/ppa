@@ -45,7 +45,7 @@ done
 
 for key in "${!pids[@]}"; do
   echo "Waiting for $key pid=${pids[$key]} label=${labels[$key]}"
-  wait ${pids[$key]} || { echo "job failed" >&2; exit; }
+  wait ${pids[$key]} || { echo "job failed" >&2; exit 1; }
 done
 
 for key in "${!labels[@]}"; do

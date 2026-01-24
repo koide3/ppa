@@ -25,11 +25,11 @@ jobs:
         CONFIG: [
           { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
           { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1",  "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
         ]
 
     steps:
@@ -57,13 +57,13 @@ jobs:
     strategy:
       matrix:
         CONFIG: [
-          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
-          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1",  "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
-          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1",  "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
         ]
 
     steps:
@@ -72,7 +72,6 @@ jobs:
           submodules: recursive
 
       - name: Docker login
-        continue-on-error: true
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -148,6 +147,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Add Iridescence packages from build_iridescence workflow"
+            git commit -m "Add gtsam_points packages from build_gtsam_points workflow"
             git push origin ppa
           fi
