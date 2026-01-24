@@ -1,12 +1,6 @@
 #!/bin/bash
 # docker build -f glim_ros2/docker/deb/Dockerfile.ros2 . -t glim_ros2
 
-mkdir -p local_ppa
-cp -R ../ubuntu2004 local_ppa/
-cp -R ../ubuntu2204 local_ppa/
-cp -R ../ubuntu2404 local_ppa/
-cp -R ../setup_ppa.sh local_ppa/
-
 platforms=($1)    # amd64
 ubuntu_label=$2   # ubuntu2404
 ros_distro=$3     # jazzy
@@ -16,6 +10,18 @@ cuda_label=$5     # 12.6
 set -e
 declare -A pids
 declare -A labels
+
+mkdir -p local_ppa
+cp -R $ubuntu_label local_ppa/
+
+pushd .
+cd local_ppa/$ubuntu_label
+dpkg-scanpackages --multiversion . > Packages
+gzip -k -f Packages
+apt-ftparchive release . > Release
+popd
+
+cp -R ../setup_local_ppa.sh local_ppa/
 
 configurations=(
   "$ubuntu_label $ros_distro $nvidia_image Dockerfile.ros2 -cuda$cuda_label"
