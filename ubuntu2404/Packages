@@ -5,10 +5,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 23635
 Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
 Filename: ./libiridescence-dev_1.0.1_amd64.deb
-Size: 3381168
-MD5sum: 4c4bf98e2b2569a47b7b080e9f3b8955
-SHA1: 905e36d8bd26ad06492859d3443a663efc8853a6
-SHA256: a88b4ae9bdcc2e63fa57cf3fa4fd0e19477df6c5a5eedb6ba7c99d2023722846
+Size: 3381194
+MD5sum: 1894aa7b8d45652e9fca754bd26792a2
+SHA1: 964892e6dca84f1daab806c4dd6bd5287cdfbbbe
+SHA256: f08e0cf324016b0492d60867345b948f99a53c4c7709e856e5718a2f37db647b
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
@@ -20,10 +20,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 21786
 Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
 Filename: ./libiridescence-dev_1.0.1_arm64.deb
-Size: 3216490
-MD5sum: d169363d99a541f168f356d429ce9e95
-SHA1: 66c86758c57937418f8369629595cdaf8d65df5b
-SHA256: 5d8428929410d029e7e778091e5fdfbc68587d400195668fc77614a8c69ed2aa
+Size: 3216474
+MD5sum: 37449a6da67b125c582f7722619199ae
+SHA1: a960c80ec7efbdb2ea58abeefa2cae0dea96ca20
+SHA256: a0b83d4d7342ebccf33319f6ffdc516fb69222d59761eb44beefad7a295f1799
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
