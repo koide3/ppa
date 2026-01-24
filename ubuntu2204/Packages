@@ -1,0 +1,30 @@
+Package: libiridescence-dev
+Version: 1.0.1
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 22749
+Depends: libglfw3-dev, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
+Filename: ./libiridescence-dev_1.0.1_amd64.deb
+Size: 3291786
+MD5sum: c6fda7dc9d509858b82617a3140b587f
+SHA1: 8adeac217b4856ef84c34814c464d0b73863ecc8
+SHA256: 233052bed0c4626b54a94fe9b6530b2bf30323279eb1a08d3dec7f1bdfe0437a
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 1.0.1
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 20710
+Depends: libglfw3-dev, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 11)
+Filename: ./libiridescence-dev_1.0.1_arm64.deb
+Size: 3161874
+MD5sum: eb5f42008a6fca57fdfbc72968eeee96
+SHA1: 0c7c8b5d30a738857a1df4310384c5d630f42236
+SHA256: 12c3bb465801a480b8b0c1cd7cf77a30d40f084c495071769e33681a0d3887a8
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
