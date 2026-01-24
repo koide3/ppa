@@ -16,7 +16,7 @@ for ((i=0; i<${#ubuntu_images[@]}; i++)); do
   ubuntu_label=${ubuntu_labels[$i]}
   for platform in "${platforms[@]}"; do
     name="iridescence:$ubuntu_image.$platform"
-    docker buildx build --platform linux/$platform -f iridescence/docker/ubuntu/Dockerfile_deb --build-arg="BASE_IMAGE=ubuntu:$ubuntu_image" iridescence -t $name &
+    docker buildx build --platform linux/$platform -f docker/Dockerfile.iridescence --build-arg="BASE_IMAGE=ubuntu:$ubuntu_image" iridescence -t $name &
     pids[$name]=$!
     labels[$name]=$ubuntu_label
   done

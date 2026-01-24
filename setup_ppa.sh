@@ -29,3 +29,4 @@ echo 'echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3
 
 curl -s --compressed "https://koide3.github.io/ppa/$ubuntu_label/KEY.gpg" | gpg --dearmor | tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] https://koide3.github.io/ppa/$ubuntu_label ./" | tee /etc/apt/sources.list.d/koide3_ppa.list
+apt update

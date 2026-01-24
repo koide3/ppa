@@ -1,0 +1,36 @@
+ARG CUDA_BASE_IMAGE=nvidia/cuda:12.5.1-devel-ubuntu24.04
+
+##### gtsam_points #####
+FROM ${CUDA_BASE_IMAGE} as gtsam_points_cuda
+
+ARG CUDA_LABEL=12.5
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends
+RUN apt-get install -y --no-install-recommends build-essential  \
+    git cmake libeigen3-dev ca-certificates libboost-all-dev libmetis-dev
+RUN apt-get install -y --no-install-recommends libomp-dev libtbb-dev file
+
+RUN curl -s https://koide3.github.io/ppa/setup_ppa.sh | bash
+RUN apt-get update && apt-get install -y --no-install-recommends libgtsam-notbb-dev
+
+COPY . /root/gtsam_points
+WORKDIR /root/gtsam_points/build
+
+RUN cmake .. \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DBUILD_WITH_CUDA=ON \
+  -DBUILD_WITH_CUDA_MULTIARCH=ON \
+  -DCPACK_DEBIAN_PACKAGE_DEPENDS="libgtsam-notbb-dev" \
+  -DCPACK_DEBIAN_PACKAGE_NAME="libgtsam-points-cuda${CUDA_LABEL}-dev"
+RUN make -j$(nproc)
+RUN cpack
+
+
+##### extract #####
+FROM ${CUDA_BASE_IMAGE} AS extract
+
+COPY --from=gtsam_points_cuda /root/gtsam_points/build/*.deb /root/deb/

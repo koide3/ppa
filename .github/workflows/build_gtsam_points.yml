@@ -1,0 +1,154 @@
+name: Build gtsam_points
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ main, ci ]
+    paths-ignore: '**.md'
+  pull_request:
+    branches: [ main ]
+    paths-ignore: '**.md'
+  repository_dispatch:
+    types: [trigger-event]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  ######## GTSAM_POINTS ########
+  build_gtsam_points_amd64:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1",  "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
+        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: gtsam_points-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}-cuda${{ matrix.CONFIG.cuda_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+  
+  build_gtsam_points_arm64:
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        CONFIG: [
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu24.04", "cuda_label": "13.1",  "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu24.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "", "cuda_label": "", "script": "build_gtsam_points.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:13.1.0-devel-ubuntu22.04", "cuda_label": "13.1", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.6.3-devel-ubuntu22.04", "cuda_label": "12.6", "script": "build_gtsam_points_cuda.sh" },
+          # { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204", "nvidia_image": "nvidia/cuda:12.2.2-devel-ubuntu22.04", "cuda_label": "12.2", "script": "build_gtsam_points_cuda.sh" },
+        ]
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Docker login
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build gtsam_points ${{ matrix.CONFIG.platform }} - ${{ matrix.CONFIG.ubuntu_image }} - cuda${{ matrix.CONFIG.cuda_label }}
+        run: cd packages && ./${{ matrix.CONFIG.script }} ${{ matrix.CONFIG.platform }} ${{ matrix.CONFIG.ubuntu_image }} ${{ matrix.CONFIG.ubuntu_label }} ${{ matrix.CONFIG.nvidia_image }} ${{ matrix.CONFIG.cuda_label }}
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: gtsam_points-${{ matrix.CONFIG.platform }}-${{ matrix.CONFIG.ubuntu_label }}-cuda${{ matrix.CONFIG.cuda_label }}
+          path: packages/${{ matrix.CONFIG.ubuntu_label }}/*
+
+  collect_artifacts:
+    needs: [build_gtsam_points_amd64, build_gtsam_points_arm64]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ppa
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-buildpackage debhelper devscripts dput dh-cmake
+
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY_B64 }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Download ubuntu2404 artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: "*-ubuntu2404"
+          path: ubuntu2404
+          merge-multiple: true
+
+      - name: Download ubuntu2204 artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: "*-ubuntu2204"
+          path: ubuntu2204
+          merge-multiple: true
+
+      - name: Scan packages and generate Release files
+        run: |
+          cd ubuntu2404
+          dpkg-scanpackages --multiversion . > Packages
+          gzip -k -f Packages
+          apt-ftparchive release . > Release
+          gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
+          gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
+          cd ../ubuntu2204
+          dpkg-scanpackages --multiversion . > Packages
+          apt-ftparchive release . > Release
+          gzip -k -f Packages
+          gpg --default-key "k.koide@aist.go.jp" -abs -o - Release > Release.gpg
+          gpg --default-key "k.koide@aist.go.jp" --clearsign -o - Release > InRelease
+          cd ..
+
+      # Add packages in ubuntu2204 and ubuntu2404 to git repository
+      - name: Add packages to PPA repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ubuntu2404/* ubuntu2204/*
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Add Iridescence packages from build_iridescence workflow"
+            git push origin ppa
+          fi
