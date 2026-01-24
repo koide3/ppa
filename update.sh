@@ -2,7 +2,7 @@
 
 git pull origin main
 # distros=("ubuntu2004" "ubuntu2204" "ubuntu2404")
-distros=("ubuntu2404")
+distros=("ubuntu2404" "ubuntu2204")
 
 for distro in "${distros[@]}"; do
   echo "Updating $distro"
