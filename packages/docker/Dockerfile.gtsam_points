@@ -1,0 +1,31 @@
+ARG BASE_IMAGE=ubuntu:noble
+
+##### gtsam_points #####
+FROM ${BASE_IMAGE} as gtsam_points
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends
+RUN apt-get install -y --no-install-recommends build-essential  \
+    git cmake libeigen3-dev ca-certificates libboost-all-dev libmetis-dev
+RUN apt-get install -y --no-install-recommends curl libomp-dev libtbb-dev file curl gpg ca-certificates
+
+RUN curl -s https://koide3.github.io/ppa/setup_ppa.sh | bash
+RUN apt-get update && apt-get install -y --no-install-recommends libgtsam-notbb-dev
+
+COPY . /root/gtsam_points
+WORKDIR /root/gtsam_points/build
+RUN cmake .. \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCPACK_DEBIAN_PACKAGE_DEPENDS="libgtsam-notbb-dev" \
+  -DCPACK_DEBIAN_PACKAGE_NAME="libgtsam-points-dev" \
+  -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -Wno-error=overloaded-virtual"
+RUN make -j$(nproc)
+RUN cpack
+
+##### extract #####
+FROM ${BASE_IMAGE} AS extract
+
+COPY --from=gtsam_points /root/gtsam_points/build/*.deb /root/deb/

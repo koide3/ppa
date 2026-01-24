@@ -1,0 +1,36 @@
+ARG BASE_IMAGE=ubuntu:noble
+
+##### gtsam #####
+FROM ${BASE_IMAGE} AS gtsam
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends
+RUN apt-get install -y --no-install-recommends build-essential  \
+    git cmake libeigen3-dev ca-certificates libboost-all-dev libmetis-dev file
+
+RUN git clone https://github.com/borglab/gtsam.git /root/gtsam -b 4.3a0
+WORKDIR /root/gtsam/build
+# Rename libgtsam-dev to libgtsam-notbb-dev
+RUN sed -i 's/libgtsam-dev/libgtsam-notbb-dev/g' ../cmake/HandleCPack.cmake
+# Build gtsam
+RUN cmake .. -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
+  -DGTSAM_BUILD_TESTS=OFF \
+  -DGTSAM_WITH_TBB=OFF \
+  -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF \
+  -DGTSAM_USE_SYSTEM_EIGEN=ON \
+  -DGTSAM_USE_SYSTEM_METIS=ON \
+  -DCPACK_GENERATOR=DEB \
+  -DCPACK_DEBIAN_FILE_NAME=DEB-DEFAULT \
+  -DCPACK_SET_DESTDIR=ON \
+  -DCPACK_DEBIAN_PACKAGE_SHLIBDEPS=ON \
+  -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -Wno-error=overloaded-virtual"
+RUN make -j$(nproc)
+RUN cpack
+
+##### extract #####
+FROM ${BASE_IMAGE} AS extract
+
+COPY --from=gtsam /root/gtsam/build/*.deb /root/deb/
