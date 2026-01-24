@@ -1,8 +1,8 @@
 # PPA
 
-## Precaution
+## Changelog
 
-You have to be aware of the risk of installing software from PPA that implies trusting the author.
+- 2026/01/24 : Iridescence(1.0.1). GLIM(1.2.0). **We changed the GPG key for the PPA. Please re-setup the PPA by following the instructions below.**
 
 ## Setup PPA
 
