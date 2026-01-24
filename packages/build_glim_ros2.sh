@@ -16,6 +16,14 @@ else
   package_suffix=""
 fi
 
+echo "build_glim_ros2.sh"
+echo "platform: $platform"
+echo "ubuntu_label: $ubuntu_label"
+echo "ros_distro: $ros_distro"
+echo "nvidia_image: $nvidia_image"
+echo "cuda_label: $cuda_label"
+echo "package_suffix: $package_suffix"
+
 name="glim_ros2:$ubuntu_label$package_suffix.$platform"
 echo $name
 docker buildx build \

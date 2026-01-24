@@ -6,6 +6,11 @@ platform=$1
 ubuntu_image=$2
 ubuntu_label=$3
 
+echo "build_iridescence.sh"
+echo "platform: $platform"
+echo "ubuntu_image: $ubuntu_image"
+echo "ubuntu_label: $ubuntu_label"
+
 set -e
 
 name="iridescence:$ubuntu_image.$platform"

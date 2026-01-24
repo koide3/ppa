@@ -4,6 +4,11 @@ platform=$1    # amd64
 ubuntu_image=$2   # noble
 ubuntu_label=$3   # ubuntu2404
 
+echo "build_gtsam.sh"
+echo "platform: $platform"
+echo "ubuntu_image: $ubuntu_image"
+echo "ubuntu_label: $ubuntu_label"
+
 set -e
 
 name="gtsam:$ubuntu_label.$platform"

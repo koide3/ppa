@@ -6,6 +6,13 @@ ubuntu_label=$3   # ubuntu2404
 nvidia_image=$4   # nvidia/cuda:12.6.3-devel-ubuntu24.04
 cuda_label=$5     # 12.6
 
+echo "build_gtsam_points_cuda.sh"
+echo "platform: $platform"
+echo "ubuntu_image: $ubuntu_image"
+echo "ubuntu_label: $ubuntu_label"
+echo "nvidia_image: $nvidia_image"
+echo "cuda_label: $cuda_label"
+
 set -e
 
 name="gtsam_points:$ubuntu_label.cuda$cuda_label.$platform"
