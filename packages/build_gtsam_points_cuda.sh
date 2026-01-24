@@ -1,6 +1,6 @@
 #!/bin/bash
 # platforms=("amd64" "arm64")
-platforms=($1)    # amd64
+platform=$1       # amd64
 ubuntu_image=$2   # noble
 ubuntu_label=$3   # ubuntu2404
 nvidia_image=$4   # nvidia/cuda:12.6.3-devel-ubuntu24.04
