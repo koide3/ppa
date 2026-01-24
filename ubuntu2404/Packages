@@ -5,10 +5,10 @@ Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
 Installed-Size: 34463
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
-Size: 4468028
-MD5sum: 85c1f499c2dd68d8ebd277316c8e9313
-SHA1: 63ca760760ee1ec4250d9ec2e555d09f0dccb8f3
-SHA256: eab4b8614c284d87f9f180c99f0384ff3bad3b5c0049433aa8b882ed3f715726
+Size: 4468012
+MD5sum: d7205fc7341deb5b85563296fd5d058a
+SHA1: 2d782defaab385b56dc9c50658911a81ade08c8a
+SHA256: d8aede470de9ec67043c5ea47c725e2a5bd2f5debb4a7302a860bc3be2e3af9e
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -153,10 +153,10 @@ Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
 Installed-Size: 32233
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
-Size: 4216482
-MD5sum: bd771c2247e1158f68d7a01d7704e5f4
-SHA1: a80377c2506910646968625c4ff7ea9e67b47c75
-SHA256: ebf2bd497740de156ae1b891e4ac029f26dbf8892f62bda87fd25c40f68581ea
+Size: 4216496
+MD5sum: 2a0ac197735532fabf3ffbeb63227396
+SHA1: 4996c0aa01880f2297cb8db5763579e9bc8e7a08
+SHA256: 655f6309c734ceee5a56719ec7e4fce9720a58ca70ab4d8217842f0fdddbc6db
 Section: devel
 Priority: optional
 Description: GTSAM
