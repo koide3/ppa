@@ -1,21 +1,16 @@
 #!/bin/bash
 # docker build -f glim_ros2/docker/deb/Dockerfile.ros2 . -t glim_ros2
 
-mkdir -p local_ppa
-cp -R ../ubuntu2004 local_ppa/
-cp -R ../ubuntu2204 local_ppa/
-cp -R ../ubuntu2404 local_ppa/
-cp -R ../setup_ppa.sh local_ppa/
+platform=$1       # amd64
+ubuntu_label=$2   # ubuntu2404
+ros_distro=$3     # jazzy
+nvidia_image=$4   # nvidia/cuda:12.6.3-devel-ubuntu24.04
+cuda_label=$5     # 12.6
 
-platforms=("amd64" "arm64")
 set -e
-declare -A pids
-declare -A labels
 
 configurations=(
-  "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1"
-  "ubuntu2004 noetic nvidia/cuda:12.2.2-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.2"
-  "ubuntu2004 noetic nvidia/cuda:12.5.1-devel-ubuntu20.04 Dockerfile.ros1 -cuda12.5"
+  "$ubuntu_label $ros_distro $nvidia_image Dockerfile.ros2 -cuda$cuda_label"
 )
 
 for platform in "${platforms[@]}"; do
@@ -27,11 +22,11 @@ for platform in "${platforms[@]}"; do
     dockerfile=${config[3]}
     package_suffix=${config[4]}
 
-    name="glim_ros1:$ubuntu_label$package_suffix.$platform"
+    name="glim_ros2:$ubuntu_label$package_suffix.$platform"
     echo $name
     docker buildx build \
       -t $name \
-      -f glim_ros1/docker/deb/${dockerfile} \
+      -f glim_ros2/docker/deb/${dockerfile} \
       --platform linux/$platform \
       --build-arg="BASE_IMAGE=$cuda_base_image" \
       --build-arg="ROS_DISTRO=$ros_distro" \
