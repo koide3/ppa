@@ -1,14 +1,14 @@
 Package: libgtsam-notbb-dev
 Version: 4.3.0
-Architecture: arm64
+Architecture: amd64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 32233
+Installed-Size: 34463
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
-Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
-Size: 4216482
-MD5sum: bd771c2247e1158f68d7a01d7704e5f4
-SHA1: a80377c2506910646968625c4ff7ea9e67b47c75
-SHA256: ebf2bd497740de156ae1b891e4ac029f26dbf8892f62bda87fd25c40f68581ea
+Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
+Size: 4468012
+MD5sum: d7205fc7341deb5b85563296fd5d058a
+SHA1: 2d782defaab385b56dc9c50658911a81ade08c8a
+SHA256: d8aede470de9ec67043c5ea47c725e2a5bd2f5debb4a7302a860bc3be2e3af9e
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -148,15 +148,15 @@ Description: GTSAM
 
 Package: libgtsam-notbb-dev
 Version: 4.3.0
-Architecture: amd64
+Architecture: arm64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 34463
+Installed-Size: 32233
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
-Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
-Size: 4468028
-MD5sum: 85c1f499c2dd68d8ebd277316c8e9313
-SHA1: 63ca760760ee1ec4250d9ec2e555d09f0dccb8f3
-SHA256: eab4b8614c284d87f9f180c99f0384ff3bad3b5c0049433aa8b882ed3f715726
+Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
+Size: 4216496
+MD5sum: 2a0ac197735532fabf3ffbeb63227396
+SHA1: 4996c0aa01880f2297cb8db5763579e9bc8e7a08
+SHA256: 655f6309c734ceee5a56719ec7e4fce9720a58ca70ab4d8217842f0fdddbc6db
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -294,20 +294,95 @@ Description: GTSAM
  .
  GTSAM was developed in the lab of [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS.md).
 
-Package: libiridescence-dev
-Version: 1.0.1
-Architecture: arm64
+Package: libgtsam-points-cuda12.6-dev
+Version: 1.2.0
+Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 21786
-Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
-Filename: ./libiridescence-dev_1.0.1_arm64.deb
-Size: 3216484
-MD5sum: b4f6df82c699af29be016e85f86000e5
-SHA1: d6cc2c6593034a8db743c78032822f6980ecb602
-SHA256: 6d75919a2b46ff74b5b26378da18b42cedd8c8cf832b6b875630cce381c1ca2b
+Installed-Size: 46117
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.34), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-cuda12.6-dev_1.2.0_amd64.deb
+Size: 4020360
+MD5sum: 06b20d744a769da73faae162ca5cd377
+SHA1: 71957daeb56b167896d85cfd13886f274e5bb57d
+SHA256: d621ef76e0ee775729150a90b4931db1bb9cde8bdc6cb6290d7ac381cbac0138
 Section: devel
 Priority: optional
-Description: 3D visualization library for rapid prototyping of 3D algorithms
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda12.6-dev
+Version: 1.2.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 45634
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-cuda12.6-dev_1.2.0_arm64.deb
+Size: 3937820
+MD5sum: cc126f4de8b8c4f385a63f81d95d1a81
+SHA1: bfb41932ec20ba3511cde9a1c14733458a5c5c03
+SHA256: 833d46cc01f2ed0184e294b8af56788511d063f58ddd3a5f36c86361ec3c93d8
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda13.1-dev
+Version: 1.2.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 54419
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.34), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-cuda13.1-dev_1.2.0_amd64.deb
+Size: 4397722
+MD5sum: 7d4f68853f935e2a78810f94e1765f30
+SHA1: 9b05ae21beb6b0b40f3298124808f0fb6856b7c3
+SHA256: 2ab6213e51dc81de4971613d7550c66fd9822ff59bbf378f8fa173c611751fac
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-cuda13.1-dev
+Version: 1.2.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 53699
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-cuda13.1-dev_1.2.0_arm64.deb
+Size: 4311526
+MD5sum: b03d698e3ebaf53511d56ed13e0de047
+SHA1: f831241ff1374ac1cb53d3a5aea100f707ccdd6b
+SHA256: 6384530030b6bbd931fd5f071101d69d67c3da2bb7f26183b7d5d25ca480e417
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-dev
+Version: 1.2.0
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 11824
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-dev_1.2.0_amd64.deb
+Size: 1248738
+MD5sum: 1267cf176489c23ca7e2f92f69c6e65f
+SHA1: 4bf50d2fbe27020e703766f41b6e986f2cff525f
+SHA256: e8962a38698ebd9002a2203ee1170e68c02f32b7dd48b9714951e1be94347b4b
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
+
+Package: libgtsam-points-dev
+Version: 1.2.0
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 11293
+Depends: libgtsam-notbb-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 13.1)
+Filename: ./libgtsam-points-dev_1.2.0_arm64.deb
+Size: 1187698
+MD5sum: 9b86b904785f3b794dd58e57044644de
+SHA1: 779e647f269c6b17786fd71423e47553302dd149
+SHA256: 52c62b86898efe9ec13b4b9f87cd66a71d004e953d9f216f78235d124a1e276f
+Section: devel
+Priority: optional
+Description: A collection of GTSAM factors for point cloud registration
 
 Package: libiridescence-dev
 Version: 1.0.1
@@ -323,4 +398,199 @@ SHA256: 85491f7876bfa19be3939b0935ad0b553435a1cf1345acbbef33636b10107b50
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 1.0.1
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 21786
+Depends: libglfw3-dev, libc6 (>= 2.38), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.2), libstdc++6 (>= 13.1)
+Filename: ./libiridescence-dev_1.0.1_arm64.deb
+Size: 3216484
+MD5sum: b4f6df82c699af29be016e85f86000e5
+SHA1: d6cc2c6593034a8db743c78032822f6980ecb602
+SHA256: 6d75919a2b46ff74b5b26378da18b42cedd8c8cf832b6b875630cce381c1ca2b
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: ros-jazzy-glim
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6533
+Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim_1.2.0-0noble_arm64.deb
+Size: 1224914
+MD5sum: 136811017406ae8a18a69002469bcc19
+SHA1: 072fcf55377db3637a193d3e7555df6cb65a0078
+SHA256: 6ce7b671af7e678ae0d72ed21239ea97153103a63e09b11a4181c4b1f887b257
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6276
+Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim_1.2.0-0noble_amd64.deb
+Size: 1271700
+MD5sum: 42407fa28d77822b1557ee1d5e735461
+SHA1: 62b0e1ffc9baceea5a89f1c987c7dc1469cbae59
+SHA256: 57e3f018be83c11bb45670b996386025fd68d8f596159320f56649f54b37c0ab
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-cuda12.6
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6666
+Depends: libiridescence-dev, libgtsam-points-cuda12.6-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim-cuda12.6_1.2.0-0noble_arm64.deb
+Size: 1241518
+MD5sum: acf35429892131896431bebc54c950b2
+SHA1: e033d48cab6bd51a753cd4be6db678bf147bd70d
+SHA256: 20368c6dd572067c718db271f48d9c983382df2d55656d53f63c7a8548850687
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-cuda12.6
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6338
+Depends: libiridescence-dev, libgtsam-points-cuda12.6-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim-cuda12.6_1.2.0-0noble_amd64.deb
+Size: 1287800
+MD5sum: 2f088443b1ee2913e8d9a442f9092791
+SHA1: b9cd3b2859e2bdb43aa9e76c8999406221c5571a
+SHA256: 3523a20e1f781b868389be5e6aab62b1c244e4e42e313d2b07fb12e632389eeb
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-cuda13.1
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6338
+Depends: libiridescence-dev, libgtsam-points-cuda13.1-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim-cuda13.1_1.2.0-0noble_amd64.deb
+Size: 1289076
+MD5sum: cf95b63f0af53b19253e6b7495b27d86
+SHA1: 3b2cd2c0f86c446cdcd9487cc441a7d08888c6d0
+SHA256: e3095e01ba70e382ba7b5a3cc18c6fc948c1ddd2671e4a5c7b846105e79beeef
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-cuda13.1
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 6666
+Depends: libiridescence-dev, libgtsam-points-cuda13.1-dev, libboost-filesystem1.83.0 (>= 1.83.0), libboost-serialization1.83.0 (>= 1.83.0), libc6 (>= 2.38), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core406t64 (>= 4.6.0+dfsg), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), libfmt-dev, libspdlog-dev
+Filename: ./ros-jazzy-glim-cuda13.1_1.2.0-0noble_arm64.deb
+Size: 1241596
+MD5sum: 8163325c178df92d53b7320ec0f9a6f5
+SHA1: 0d51d4443cc6d7213b679ce7fb50a683e29afd64
+SHA256: 5c40ae553bf8707b9b492f3a2e779992c652d1e6d66ec4fa1a0fc965e900081c
+Section: misc
+Priority: optional
+Description: 3D LiDAR-IMU mapping framework
+
+Package: ros-jazzy-glim-ros
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2780
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros_1.2.0-0noble_arm64.deb
+Size: 469648
+MD5sum: 5b4a0d25cdd1a147bc077a97839a8ec1
+SHA1: be2b094f9c1f58ae7bb89592fda4ea4bf036b299
+SHA256: 0aa306eed60ef3766251896a4947f727ff60037991d1b824e1fa0ab6f12d0ed1
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2693
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros_1.2.0-0noble_amd64.deb
+Size: 505660
+MD5sum: 565d6af5de45fd4d79d41b7b977346db
+SHA1: 9f050ad3f3bf09e12b79e1be4afbb3d2b7d32870
+SHA256: 57914c2d77dce35f1a782025cbedbecf0994b88c90183f694248a61fbb8f7cd8
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros-cuda12.6
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2693
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda12.6, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros-cuda12.6_1.2.0-0noble_amd64.deb
+Size: 506172
+MD5sum: 7174ebe4569ccadd5d1407c06acdb2f3
+SHA1: 732ace033262c50bd75c8cf9807eae185941fe39
+SHA256: fd9e56c128917c8fb7498cf0929c0e07ff7107930f6a1746fd434f51df0eb6dc
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros-cuda12.6
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2780
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda12.6, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros-cuda12.6_1.2.0-0noble_arm64.deb
+Size: 470684
+MD5sum: 0ab0cb261fd05d297fc3d7c6401f4473
+SHA1: 1feb94208fae49c37b627fae4eb0553e64e90b50
+SHA256: 388f4e841ed27748233999e3191731de764fff907422f92ac2e75f21157da17e
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros-cuda13.1
+Version: 1.2.0-0noble
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2693
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 3.3.1), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda13.1, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros-cuda13.1_1.2.0-0noble_amd64.deb
+Size: 506164
+MD5sum: b540918c469e8f68a28c230d6b275a90
+SHA1: 9d448d7001757e235dcbc2c9d55b1ab7f67ea173
+SHA256: c4dae3c9f6c02e3642ca0edeff116ac9cc879b7d3b74d2d40c38053a821a2a08
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
+
+Package: ros-jazzy-glim-ros-cuda13.1
+Version: 1.2.0-0noble
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 2780
+Depends: libboost-program-options1.83.0 (>= 1.83.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt9 (>= 9.1.0+ds1), libgcc-s1 (>= 4.5), libspdlog1.12-fmt9, libstdc++6 (>= 13.1), ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-glim-cuda13.1, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rosbag2-compression, ros-jazzy-rosbag2-cpp, ros-jazzy-sensor-msgs, ros-jazzy-tf2-ros
+Filename: ./ros-jazzy-glim-ros-cuda13.1_1.2.0-0noble_arm64.deb
+Size: 470682
+MD5sum: d747f780d10798e8a34319932f610100
+SHA1: 18edff8b6ed1b63f9f2c8267a7a609204e3682a7
+SHA256: 88bd3d59f312dca6c839e951895e482610493c62993821787e6db071b32dce78
+Section: misc
+Priority: optional
+Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
