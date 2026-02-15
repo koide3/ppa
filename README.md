@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 2026/02/15 : gtsam_points(1.2.1). GLIM(1.2.1). Auto topic and IMU configuration. IMU validation.
 - 2026/01/24 : Iridescence(1.0.1). GLIM(1.2.0). **We changed the GPG key for the PPA. Please re-setup the PPA by following the instructions below.**
 
 ## Setup PPA
