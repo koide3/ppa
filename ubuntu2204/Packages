@@ -597,121 +597,129 @@ Description: 3D visualization library for rapid prototyping of 3D algorithms
 Package: ros-humble-glim
 Version: 1.2.0-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
+Maintainer: "k.koide" <k.koide@aist.go.jp>
 Installed-Size: 6122
 Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim_1.2.0-0jammy_amd64.deb
-Size: 1262138
-MD5sum: 888173276c65e4649081637840793fbf
-SHA1: 3bad73ff1b415ff69b597caaeefaa1acc4fc4812
-SHA256: 9152ab48ae77662f9f4ae5de62ec0a85609b2b10e8ada7991c434a0249152612
+Size: 1262126
+MD5sum: ee535f9c006ed84968c8334ec665cfbc
+SHA1: b6720b01f6d05cb05ad390390df61bfb7e7bbca6
+SHA256: 42485cff34c468dbaf21e5599c1c9c02e87b8ef79397dbe96bce52201d74b428
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim
 Version: 1.2.0-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 5660
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 5664
 Depends: libiridescence-dev, libgtsam-points-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim_1.2.0-0jammy_arm64.deb
-Size: 1201612
-MD5sum: b789b7f372a38da1fcded0776bf5d491
-SHA1: a614a9eb4a8e849a39aff0082e31816acd29c96d
-SHA256: b12f758e190d2a8e8873b190ab081efaf76dafc3bfeac5e2602905365d664958
+Size: 1201438
+MD5sum: 7f14f344e632279c37ae5523bbcb1a57
+SHA1: 90939593022cf74db8b4c984b49080e899dfd1c3
+SHA256: abb51bcf2fd9f9756788f5a8cea9a83044c494007e4bcee1e9c362f124124fd3
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda12.2
 Version: 1.2.0-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
+Maintainer: "k.koide" <k.koide@aist.go.jp>
 Installed-Size: 6188
 Depends: libiridescence-dev, libgtsam-points-cuda12.2-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda12.2_1.2.0-0jammy_amd64.deb
-Size: 1276332
-MD5sum: 44c5fb0b76aed60c5171cb25509d05e3
-SHA1: 55e438956b073b0f2282b4e91e8dc1a2751bf154
-SHA256: 9bca8e28cf263e36df523e6adfaf3fab76acb2ba202ee8d42ea0e37c68e64653
+Size: 1276456
+MD5sum: 07f2ca75fa9846438c34386fb6f3e702
+SHA1: 7208083abad34a5e081a4243c226ac8b7313d8e8
+SHA256: 3a4c58ff2e45a4efda51563f9b1284bf4f66e9780d7c7433ed69686f55658ffa
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda12.2
 Version: 1.2.0-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 5705
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 5713
 Depends: libiridescence-dev, libgtsam-points-cuda12.2-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda12.2_1.2.0-0jammy_arm64.deb
-Size: 1213466
-MD5sum: 47a151d42a05c7cf31596e7847cc0629
-SHA1: ae79f9ff9c43bffc078dc8aa8df8fa94673ea28a
-SHA256: 2b43a26a872619bb633312bd496f2e016091a011afc72e840df9c61f10a91574
+Size: 1213456
+MD5sum: 77202ef354b6247e5f524db2cbd321ef
+SHA1: c021e165837299ce64c8d244de7859db43f43e9d
+SHA256: 70123a77032d5a1efcde6638861d9aebef5afa25fc527a2d73f9f07fd5e54711
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda12.6
 Version: 1.2.0-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
+Maintainer: "k.koide" <k.koide@aist.go.jp>
 Installed-Size: 6188
 Depends: libiridescence-dev, libgtsam-points-cuda12.6-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda12.6_1.2.0-0jammy_amd64.deb
-Size: 1276324
-MD5sum: aa2d5f579c5ea9edbcafa15e22a947ed
-SHA1: 1d2d23276809780397f0fa9c3bb1f9290a23225c
-SHA256: 77d7cabdc2e9cce0adbf377ab416e08e414fa06fb3917ebf6efdeae912c9cf78
+Size: 1276372
+MD5sum: b26e3811ea282052398eb514f3848e45
+SHA1: a689706671153a5647ebbb6a1fac0685fdb67250
+SHA256: b9a40c043c7969f8d0fcc101e61efc5d37bda7d7c067c79d5c2a92959690001d
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda12.6
 Version: 1.2.0-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 5705
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 5713
 Depends: libiridescence-dev, libgtsam-points-cuda12.6-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda12.6_1.2.0-0jammy_arm64.deb
-Size: 1213568
-MD5sum: f506e0e58d0a679923f89575eda4edee
-SHA1: 8e33bd48253131816d0a1d6fedf7111cc3973ea1
-SHA256: 4834e7fe6b04eae3bc0f9b2468f6840a6a4d68982238b1aced36a427bffc4414
+Size: 1213426
+MD5sum: e30385d610f084fb6e31497fa5630255
+SHA1: f15ae408a848ad8c04548c525e7b110cead114bf
+SHA256: 16d26effdb74d4bbd8026dd2d82bece256ee634e8436032c6be91689181d2e33
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda13.1
 Version: 1.2.0-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
+Maintainer: "k.koide" <k.koide@aist.go.jp>
 Installed-Size: 6188
 Depends: libiridescence-dev, libgtsam-points-cuda13.1-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda13.1_1.2.0-0jammy_amd64.deb
-Size: 1276440
-MD5sum: c0f7e68ba286a84dc5ef03794a66e6a3
-SHA1: 0a2fe389cd30998b238a0cd7d199b3e708b3d74b
-SHA256: 346291dd678422d2f32909b8374f8d795ff9275f56af802c0a2e24246f0e9078
+Size: 1276362
+MD5sum: e02110536f98f89aa6368e878b99f9f8
+SHA1: 63643a3c4acbe223ce863846def27a36f584dc1e
+SHA256: bcbfc23a98c6591b9e691a0af2b04a679727456c02ad862d40ef940e77126450
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-cuda13.1
 Version: 1.2.0-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 5705
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 5713
 Depends: libiridescence-dev, libgtsam-points-cuda13.1-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-serialization1.74.0 (>= 1.74.0), libc6 (>= 2.34), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libgomp1 (>= 6), libopencv-core4.5d (>= 4.5.4+dfsg), libspdlog1-fmt8, libstdc++6 (>= 12), libfmt-dev, libspdlog-dev
 Filename: ./ros-humble-glim-cuda13.1_1.2.0-0jammy_arm64.deb
-Size: 1213612
-MD5sum: ae90c34c56b155fb80cfab9f3e231567
-SHA1: ad97bdb973ab2bbc11d8c551c8e9e32531bf3ae8
-SHA256: 2a9b3c457a22bbd716b5d5065c9185aebac8b2ee99fc0efbdbf3e76dc188e51b
+Size: 1213428
+MD5sum: 1c1e6759a4925cfd8b769382c95b857f
+SHA1: b1bee803a4e66a7c069fbf74503f096b47ef1d36
+SHA256: 99db91238326fb05bfd8420a1283135f27aebda6d9fbc0514ec2fe19613aaf5c
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim/#humble
 Description: 3D LiDAR-IMU mapping framework
 
 Package: ros-humble-glim-ros
@@ -747,31 +755,33 @@ Description: LiDAR-IMU odometry based on tight coupling of geometric and inertia
 Package: ros-humble-glim-ros
 Version: 1.2.1-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 2056
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 2040
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros_1.2.1-0jammy_amd64.deb
-Size: 401824
-MD5sum: 613b822cc16245fe7b0a9261fce88cdc
-SHA1: 0b9902fd669a8ce792c4b12e1b0c70fe3732bc42
-SHA256: 86332e5b79f5053050d762ad5594c4c69ed60ada0ec44b75594fd4fcf4595ac2
+Size: 396950
+MD5sum: 06ebdd4bcce8d853a7c461707a8e5f20
+SHA1: 402f102585b52354ba4ea727ff019ec05cf129c0
+SHA256: f0ed435fb84da3b226dc807d900ea5404ffbeffba85b1319639381f5ba6fbdd7
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros
 Version: 1.2.1-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
+Maintainer: "k.koide" <k.koide@aist.go.jp>
 Installed-Size: 1896
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros_1.2.1-0jammy_arm64.deb
-Size: 369100
-MD5sum: 708873f8aa281b8d675ee0480a9fcfdb
-SHA1: 26f79b97ac3d098649d0abf36bbd8943406d5b33
-SHA256: 04c6e8305105c7db7cd2dbbed1ea5ceba0aaa7cd72cd8c0d8a46428f767313fb
+Size: 366806
+MD5sum: e43f11a22391156a2cf27eaed4bb26ca
+SHA1: 4994dc8f525f62c51c2076b9557a104bd087178d
+SHA256: 10994edbf0fdd4990954986753ad450637ed57aee73c74687338ebd7da7c23c1
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda12.2
@@ -807,31 +817,33 @@ Description: LiDAR-IMU odometry based on tight coupling of geometric and inertia
 Package: ros-humble-glim-ros-cuda12.2
 Version: 1.2.1-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 1896
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 1888
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda12.2, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda12.2_1.2.1-0jammy_arm64.deb
-Size: 369650
-MD5sum: 2ce9eba6b0728381a4aeb64d479c7e7c
-SHA1: dc4f33b5ce536ee90358e2325c0d519c4d632d89
-SHA256: 43ab8a5f98cebd2f51bfd5f3312d4d03c1eba5a0ed11acd57f90fbf09303af3f
+Size: 366810
+MD5sum: 0b964890e2142ec5d282a943ca7b0ae5
+SHA1: 4b72726f277c27b3db439895f77f734c2cfb50d9
+SHA256: a1a25afb1a2837d16f102fbefbfb8e4a3f851e674aadc4c29f73d9cdf3516ce3
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda12.2
 Version: 1.2.1-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 2056
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 2040
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda12.2, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda12.2_1.2.1-0jammy_amd64.deb
-Size: 401934
-MD5sum: 6fcda79cf6fa11e4b665590a44504ade
-SHA1: 2f9172b28c872478d18ca1be861205af6cb8c188
-SHA256: a749ed5324090fc4103afde11bd7d2ff289357e9a60e6631570f6cc190a46660
+Size: 398136
+MD5sum: 680681d5bdd9330c8187ded4a358c625
+SHA1: f543bf51b96fdf8c675254a77a950a1662167342
+SHA256: 2ed51f40a467c5dc429f13b4e54bc4c0dacef8d56029ff592c2f1e34d5103691
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda12.6
@@ -867,31 +879,33 @@ Description: LiDAR-IMU odometry based on tight coupling of geometric and inertia
 Package: ros-humble-glim-ros-cuda12.6
 Version: 1.2.1-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 1896
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 1888
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda12.6, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda12.6_1.2.1-0jammy_arm64.deb
-Size: 369640
-MD5sum: 9391131e17d76af0157ada9c6e8a101e
-SHA1: 4babfc158e4d0a60dd62c329c3701c4c8ba5bc23
-SHA256: f4987176a0423e74498ee433a8d0e558b8e03c61c540ab38fe52e01819d76a09
+Size: 366800
+MD5sum: c51932457a1a298aa1342dff764dc574
+SHA1: aa16974d27d3a2f79a6e2439fb477b04d1cc04cb
+SHA256: 66d4d93c6e506050de8cad29da043135f166ca3b2002762cc0f66dc8f46c6319
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda12.6
 Version: 1.2.1-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 2056
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 2040
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda12.6, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda12.6_1.2.1-0jammy_amd64.deb
-Size: 401942
-MD5sum: eb4f76db0c41809c1375e32bfc01df82
-SHA1: 0f75e80250640167712e85157f95985f221cacaf
-SHA256: 874fa0a44e78bb3ec0ea895bcd77504d4305dd5094ecf5a74b848150cf2ffac4
+Size: 398070
+MD5sum: bb0e17ec013007f81b45dd5b559e2e5b
+SHA1: 2131527872930cb09a9c22748ecbcc170f06d7d6
+SHA256: 5d7a5fcdc9812011b372c85f1dad4dc58b8605b858f93d00bcb524bd0ed51597
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda13.1
@@ -927,30 +941,32 @@ Description: LiDAR-IMU odometry based on tight coupling of geometric and inertia
 Package: ros-humble-glim-ros-cuda13.1
 Version: 1.2.1-0jammy
 Architecture: amd64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 2056
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 2040
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 3.3.1), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda13.1, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda13.1_1.2.1-0jammy_amd64.deb
-Size: 401944
-MD5sum: 73a07584b3d8e0f7ed201a297a094545
-SHA1: 82da1495813949098e0906082568079c3e1db2aa
-SHA256: 3409f7675bcd534c18625d6ef1f353f0002ff19286d809946ffc257802d427b5
+Size: 398078
+MD5sum: 3eb1f934ccf4a302539c42a1704a68ea
+SHA1: 3f2569e8ec4812a36fc5909615ad31cbcfd35ec2
+SHA256: 7b42ea53518d43a7bbac6b4542788e82ff5700d0afd68c3cfcdc9a97f39787b7
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
 Package: ros-humble-glim-ros-cuda13.1
 Version: 1.2.1-0jammy
 Architecture: arm64
-Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 1896
+Maintainer: "k.koide" <k.koide@aist.go.jp>
+Installed-Size: 1888
 Depends: libboost-program-options1.74.0 (>= 1.74.0), libc6 (>= 2.34), libconsole-bridge1.0 (>= 1.0.1+dfsg2), libfmt8 (>= 8.1.1+ds1), libgcc-s1 (>= 4.5), libspdlog1-fmt8, libstdc++6 (>= 11), ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-glim-cuda13.1, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-compression, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-sensor-msgs, ros-humble-tf2-ros
 Filename: ./ros-humble-glim-ros-cuda13.1_1.2.1-0jammy_arm64.deb
-Size: 369632
-MD5sum: 712621b0124e00a5b474febf51298148
-SHA1: e48b20919767d1a50df7e24b990b8ede13af9360
-SHA256: f0336e6c7a6f59aff0a6cdbc3e7bad8e2c9aa65c6dd345fa94f2d8467a7c220b
+Size: 366828
+MD5sum: 6f3f16c001a6e6702d479fa0a97168ff
+SHA1: 180963230a5073f4ee02d02fa0f0e37250d12d88
+SHA256: 05af51efd0ee2ff4bf06a6f315f28d01186989d917a910391b7c79e2d7e75c89
 Section: misc
 Priority: optional
+Homepage: https://index.ros.org/p/glim_ros/#humble
 Description: LiDAR-IMU odometry based on tight coupling of geometric and inertial constraints
 
