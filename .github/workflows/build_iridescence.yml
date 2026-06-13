@@ -23,6 +23,7 @@ jobs:
     strategy:
       matrix:
         CONFIG: [
+          { "platform": "amd64", "ubuntu_image": "resolute", "ubuntu_label": "ubuntu2604" },
           { "platform": "amd64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404" },
           { "platform": "amd64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204" },
         ]
@@ -55,6 +56,7 @@ jobs:
     strategy:
       matrix:
         CONFIG: [
+          { "platform": "arm64", "ubuntu_image": "resolute", "ubuntu_label": "ubuntu2604" },
           { "platform": "arm64", "ubuntu_image": "noble", "ubuntu_label": "ubuntu2404" },
           { "platform": "arm64", "ubuntu_image": "jammy", "ubuntu_label": "ubuntu2204" },
         ]
