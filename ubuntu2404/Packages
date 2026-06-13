@@ -2,17 +2,19 @@ Package: libgtsam-notbb-dev
 Version: 4.3.0
 Architecture: arm64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 32233
+Installed-Size: 33976
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
-Size: 4216496
-MD5sum: 2a0ac197735532fabf3ffbeb63227396
-SHA1: 4996c0aa01880f2297cb8db5763579e9bc8e7a08
-SHA256: 655f6309c734ceee5a56719ec7e4fce9720a58ca70ab4d8217842f0fdddbc6db
+Size: 4409512
+MD5sum: 355e3114773f4ec08ba531463621eacb
+SHA1: e30e9abf713cfcd4ee3785ea4fc64a54f12a8df4
+SHA256: 0ba9d7eedea32b870e1c8c3bd8cbacf6905faffdff7bf484039e9182a9143f6c
 Section: devel
 Priority: optional
 Description: GTSAM
  # GTSAM: Georgia Tech Smoothing and Mapping Library
+ [![C++ API](https://img.shields.io/badge/API-C%2B%2B-blue.svg)](https://gtsam.org/doxygen/)
+ [![Docs](https://img.shields.io/badge/Docs-Python%20%7C%20C%2B%2B-green.svg)](https://borglab.github.io/gtsam/)
  .
  **Important Note**
  .
@@ -27,16 +29,27 @@ Description: GTSAM
  Networks as the underlying computing paradigm rather than sparse
  matrices.
  .
- The current support matrix is:
  .
- |      Platform      | Compiler  |                                   Build Status                                   |
- | :----------------: | :-------: | :------------------------------------------------------------------------------: |
- | Ubuntu 22.04/24.04 | gcc/clang |   ![Linux CI](https://github.com/borglab/gtsam/workflows/Linux%20CI/badge.svg)   |
- |       macOS        |   clang   |   ![macOS CI](https://github.com/borglab/gtsam/workflows/macOS%20CI/badge.svg)   |
- |      Windows       |   MSVC    | ![Windows CI](https://github.com/borglab/gtsam/workflows/Windows%20CI/badge.svg) |
  .
+ &lt;!-- Main CI Badges (develop branch) --&gt;
+ | CI Status | Platform | Compiler |
+ |:----------|:---------|:---------|
+ | [![Python CI](https://github.com/borglab/gtsam/actions/workflows/build-python.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/build-python.yml?query=branch%3Adevelop) | Ubuntu 22.04, MacOS 13-14, Windows | gcc/clang,MSVC |
+ | [![vcpkg](https://github.com/borglab/gtsam/actions/workflows/vcpkg.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/vcpkg.yml?query=branch%3Adevelop) | Latest Windows/Ubuntu/Mac | - |
+ | [![Build Wheels for Develop](https://github.com/borglab/gtsam/actions/workflows/build-cibw.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/build-cibw.yml?query=branch%3Adevelop) | See [pypi files](https://pypi.org/project/gtsam-develop/#files); no Windows| - |
  .
  On top of the C++ library, GTSAM includes [wrappers for MATLAB &amp; Python](#wrappers).
+ .
+ .
+ ## Documentation
+ .
+ - **C++ API Docs:** [https://gtsam.org/doxygen/](https://gtsam.org/doxygen/)
+ - **Python API Docs:** [https://borglab.github.io/gtsam/](https://borglab.github.io/gtsam/)
+ &lt;!-- TODO: Perhaps include links to source code as well? But the wrappers doesn&apos;t really help too much understanding the source code.
+ C++: https://github.com/borglab/gtsam/tree/develop/gtsam
+ Matlab wrapper: https://github.com/borglab/gtsam/blob/develop/matlab/README.md
+ Python wrapper https://github.com/borglab/gtsam/blob/develop/python/README.md
+ --&gt;
  .
  .
  ## Quickstart
@@ -48,15 +61,29 @@ Description: GTSAM
  mkdir build
  cd build
  cmake ..
- make check (optional, runs unit tests)
+ make check  # optional, runs all unit tests
  make install
  ```
  .
  Prerequisites:
  .
- - [Boost](http://www.boost.org/users/download/) &gt;= 1.65 (Ubuntu: `sudo apt-get install libboost-all-dev`)
- - [CMake](http://www.cmake.org/cmake/resources/software.html) &gt;= 3.0 (Ubuntu: `sudo apt-get install cmake`)
- - A modern compiler, i.e., at least gcc 4.7.3 on Linux.
+ - A modern compiler:
+     - Mac: at least xcode-14.2
+     - Linux: at least clang-11 or gcc-9
+     - Windows: at least msvc-14.2
+ - [CMake](http://www.cmake.org/cmake/resources/software.html) &gt;= 3.9
+     - Ubuntu: `sudo apt-get install cmake`
+ .
+ Optional Boost prerequisite:
+ .
+ Boost is now *optional*. Two cmake flags govern its behavior:
+  - `GTSAM_USE_BOOST_FEATURES` = `ON|OFF`: some of our timers and concept checking in the tests still depend on boost.
+  - `GTSAM_ENABLE_BOOST_SERIALIZATION` = `ON|OFF`: serialization of factor graphs, factors, etc still is done using boost
+ .
+ If one or both of these flags are `ON`, you need to install [Boost](http://www.boost.org/users/download/) &gt;= 1.70
+     - Mac: `brew install boost`
+     - Ubuntu: `sudo apt-get install libboost-all-dev`
+     - Windows: We highly recommend using the [vcpkg](https://github.com/microsoft/vcpkg) package manager. For other installation methods or troubleshooting, please see the guidance in the [cmake/HandleBoost.cmake](cmake/HandleBoost.cmake) script.
  .
  Optional prerequisites - used automatically if findable by CMake:
  .
@@ -132,9 +159,9 @@ Description: GTSAM
  .
  ## Additional Information
  .
- There is a [`GTSAM users Google group`](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
+ There is a [GTSAM users Google group](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
  .
- Read about important [`GTSAM-Concepts`](GTSAM-Concepts.md) here. A primer on GTSAM Expressions,
+ Read about important [GTSAM-Concepts](doc/GTSAM-Concepts.md) here. A primer on GTSAM Expressions,
  which support (superfast) automatic differentiation,
  can be found on the [GTSAM wiki on BitBucket](https://bitbucket.org/gtborg/gtsam/wiki/Home).
  .
@@ -150,17 +177,19 @@ Package: libgtsam-notbb-dev
 Version: 4.3.0
 Architecture: amd64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 34463
+Installed-Size: 36275
 Depends: libboost-dev (>= 1.65), libboost-serialization1.83.0 (>= 1.83.0), libboost-timer1.83.0 (>= 1.83.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 13.1)
 Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
-Size: 4468012
-MD5sum: d7205fc7341deb5b85563296fd5d058a
-SHA1: 2d782defaab385b56dc9c50658911a81ade08c8a
-SHA256: d8aede470de9ec67043c5ea47c725e2a5bd2f5debb4a7302a860bc3be2e3af9e
+Size: 4671406
+MD5sum: ea1ec7528fa3d972ad0bf3dcad616dca
+SHA1: 943abca41f9ff986375b8c05ae7ab8be84d00ed1
+SHA256: 9503ed3708d61426edbc595d01288bedbd5fa7b942247530b0145fd2d67dd861
 Section: devel
 Priority: optional
 Description: GTSAM
  # GTSAM: Georgia Tech Smoothing and Mapping Library
+ [![C++ API](https://img.shields.io/badge/API-C%2B%2B-blue.svg)](https://gtsam.org/doxygen/)
+ [![Docs](https://img.shields.io/badge/Docs-Python%20%7C%20C%2B%2B-green.svg)](https://borglab.github.io/gtsam/)
  .
  **Important Note**
  .
@@ -175,16 +204,27 @@ Description: GTSAM
  Networks as the underlying computing paradigm rather than sparse
  matrices.
  .
- The current support matrix is:
  .
- |      Platform      | Compiler  |                                   Build Status                                   |
- | :----------------: | :-------: | :------------------------------------------------------------------------------: |
- | Ubuntu 22.04/24.04 | gcc/clang |   ![Linux CI](https://github.com/borglab/gtsam/workflows/Linux%20CI/badge.svg)   |
- |       macOS        |   clang   |   ![macOS CI](https://github.com/borglab/gtsam/workflows/macOS%20CI/badge.svg)   |
- |      Windows       |   MSVC    | ![Windows CI](https://github.com/borglab/gtsam/workflows/Windows%20CI/badge.svg) |
  .
+ &lt;!-- Main CI Badges (develop branch) --&gt;
+ | CI Status | Platform | Compiler |
+ |:----------|:---------|:---------|
+ | [![Python CI](https://github.com/borglab/gtsam/actions/workflows/build-python.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/build-python.yml?query=branch%3Adevelop) | Ubuntu 22.04, MacOS 13-14, Windows | gcc/clang,MSVC |
+ | [![vcpkg](https://github.com/borglab/gtsam/actions/workflows/vcpkg.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/vcpkg.yml?query=branch%3Adevelop) | Latest Windows/Ubuntu/Mac | - |
+ | [![Build Wheels for Develop](https://github.com/borglab/gtsam/actions/workflows/build-cibw.yml/badge.svg?branch=develop)](https://github.com/borglab/gtsam/actions/workflows/build-cibw.yml?query=branch%3Adevelop) | See [pypi files](https://pypi.org/project/gtsam-develop/#files); no Windows| - |
  .
  On top of the C++ library, GTSAM includes [wrappers for MATLAB &amp; Python](#wrappers).
+ .
+ .
+ ## Documentation
+ .
+ - **C++ API Docs:** [https://gtsam.org/doxygen/](https://gtsam.org/doxygen/)
+ - **Python API Docs:** [https://borglab.github.io/gtsam/](https://borglab.github.io/gtsam/)
+ &lt;!-- TODO: Perhaps include links to source code as well? But the wrappers doesn&apos;t really help too much understanding the source code.
+ C++: https://github.com/borglab/gtsam/tree/develop/gtsam
+ Matlab wrapper: https://github.com/borglab/gtsam/blob/develop/matlab/README.md
+ Python wrapper https://github.com/borglab/gtsam/blob/develop/python/README.md
+ --&gt;
  .
  .
  ## Quickstart
@@ -196,15 +236,29 @@ Description: GTSAM
  mkdir build
  cd build
  cmake ..
- make check (optional, runs unit tests)
+ make check  # optional, runs all unit tests
  make install
  ```
  .
  Prerequisites:
  .
- - [Boost](http://www.boost.org/users/download/) &gt;= 1.65 (Ubuntu: `sudo apt-get install libboost-all-dev`)
- - [CMake](http://www.cmake.org/cmake/resources/software.html) &gt;= 3.0 (Ubuntu: `sudo apt-get install cmake`)
- - A modern compiler, i.e., at least gcc 4.7.3 on Linux.
+ - A modern compiler:
+     - Mac: at least xcode-14.2
+     - Linux: at least clang-11 or gcc-9
+     - Windows: at least msvc-14.2
+ - [CMake](http://www.cmake.org/cmake/resources/software.html) &gt;= 3.9
+     - Ubuntu: `sudo apt-get install cmake`
+ .
+ Optional Boost prerequisite:
+ .
+ Boost is now *optional*. Two cmake flags govern its behavior:
+  - `GTSAM_USE_BOOST_FEATURES` = `ON|OFF`: some of our timers and concept checking in the tests still depend on boost.
+  - `GTSAM_ENABLE_BOOST_SERIALIZATION` = `ON|OFF`: serialization of factor graphs, factors, etc still is done using boost
+ .
+ If one or both of these flags are `ON`, you need to install [Boost](http://www.boost.org/users/download/) &gt;= 1.70
+     - Mac: `brew install boost`
+     - Ubuntu: `sudo apt-get install libboost-all-dev`
+     - Windows: We highly recommend using the [vcpkg](https://github.com/microsoft/vcpkg) package manager. For other installation methods or troubleshooting, please see the guidance in the [cmake/HandleBoost.cmake](cmake/HandleBoost.cmake) script.
  .
  Optional prerequisites - used automatically if findable by CMake:
  .
@@ -280,9 +334,9 @@ Description: GTSAM
  .
  ## Additional Information
  .
- There is a [`GTSAM users Google group`](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
+ There is a [GTSAM users Google group](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
  .
- Read about important [`GTSAM-Concepts`](GTSAM-Concepts.md) here. A primer on GTSAM Expressions,
+ Read about important [GTSAM-Concepts](doc/GTSAM-Concepts.md) here. A primer on GTSAM Expressions,
  which support (superfast) automatic differentiation,
  can be found on the [GTSAM wiki on BitBucket](https://bitbucket.org/gtborg/gtsam/wiki/Home).
  .
