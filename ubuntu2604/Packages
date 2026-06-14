@@ -348,3 +348,33 @@ Description: GTSAM
  .
  GTSAM was developed in the lab of [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS.md).
 
+Package: libiridescence-dev
+Version: 1.0.2
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 21767
+Depends: libglfw3-dev, libc6 (>= 2.43), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.46), libstdc++6 (>= 14)
+Filename: ./libiridescence-dev_1.0.2_arm64.deb
+Size: 3316968
+MD5sum: 1c70a88841ca1d6e51633636993baaa5
+SHA1: dd7ee77ef2d2112031e62e3eb0d77aeeb96262e1
+SHA256: aa7c939beb54d12461e2ee4bb72cd4e65fb231cad9a6c133df859a65d11b78e4
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 1.0.2
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 24912
+Depends: libglfw3-dev, libc6 (>= 2.43), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.46), libstdc++6 (>= 14)
+Filename: ./libiridescence-dev_1.0.2_amd64.deb
+Size: 3561480
+MD5sum: 0b16172a8e1fbaccba64cf9f3619f389
+SHA1: d9ea53492bda48ceb678d32d1612742e4356c898
+SHA256: d043733eba523408684c1f8bb92d62c79814f0cd5262cd690f177a9930d849aa
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
