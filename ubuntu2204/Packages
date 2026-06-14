@@ -385,10 +385,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 54868
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.32), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda12.2-dev_1.2.1_amd64.deb
-Size: 5590208
-MD5sum: b97dc875567f0807a69a7cb12ce4c27c
-SHA1: 841c92b21ae38191211abd096f0210929da6a3ae
-SHA256: 40fdd4b923060e5ddbde62fb9c6479ece50786670ae0b39e2eaf9a6e5dd12406
+Size: 5590178
+MD5sum: 99b2c6fcbe9aab9b636f18456a60a959
+SHA1: 65badbf6fe07877d49d2d0f49a67c1894aab1fc2
+SHA256: 2f1469219f77ef44beef18896efad56c5b28da340edb9df542f6f1c76e907199
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -400,10 +400,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 54076
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda12.2-dev_1.2.1_arm64.deb
-Size: 5524328
-MD5sum: 801151f2dee4db522bf37ce7217c5113
-SHA1: 3c1be05b2a0b951a623224ce5da967f68b5efdf5
-SHA256: 0e33bc3ffc9e4d9a9d1069d16e20b05e9bbdc3b675666e0d1581cafa5081ce4b
+Size: 5524348
+MD5sum: 4bb7af0e6a9f6d5ad69ddfabddf4b19a
+SHA1: 54e2327d82b1c5108485a25fa1330ce83155f2e6
+SHA256: 186e96addb09d2e7c1e607c30260fb0b8b01b773bba191d7c58e5cea724b1b8e
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -445,10 +445,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 55619
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda12.6-dev_1.2.1_arm64.deb
-Size: 5606096
-MD5sum: 009c8e4660c35e51298a378d4890d760
-SHA1: 619102b19a143d0fe92151d3c806f72a4768b444
-SHA256: 1965443d1d0eed3aa81458218f79194606c23125aae3f630d0ed761982c9a532
+Size: 5606116
+MD5sum: e24c0d407e06073b79d1389ed165548a
+SHA1: bf1d99d9297235ff0aae99b611c52101edd20692
+SHA256: 6bffecc1959796d874ac00d78ab5edfa93e9831b956e0860c03f7d41964ef99a
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -460,10 +460,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 56381
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.34), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda12.6-dev_1.2.1_amd64.deb
-Size: 5677778
-MD5sum: a19447d4fc2efa8d972c1d58e42f762c
-SHA1: e90485014f6909b09d51bc108883133c8b238476
-SHA256: b38f9ed444ff27d6004aa4b50e83f122fccbbe2dd443f2b8d985c7921d01b385
+Size: 5677796
+MD5sum: 9bd46b557c9ff5667bbe669e30e94649
+SHA1: 46d41303f04e30a4d9b3c21e3e66511bcef1d945
+SHA256: d61b7153c4da714f8507f1ba26cea9beb5e17d253fa77f144347409a90e9ed88
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -505,10 +505,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 51369
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.34), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda13.1-dev_1.2.1_amd64.deb
-Size: 5881230
-MD5sum: a30bac93b2d023d5b1d1a3b1640505ea
-SHA1: 1f6491bcc30a2521f427a7f203f51e8f1cf5f5ca
-SHA256: 9efbeeeeb2c735890334d04113708b2265480a6dd07dd7eada369a2a2bc0c905
+Size: 5881206
+MD5sum: 31aca024fcd05febdb30bcaf8846037d
+SHA1: dd8942d810519d3aa15579d053ddc8d3a13400fc
+SHA256: 02af912e55520b7282892b20013e0ac505d9e77d24f87d2d3938b8592639e932
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -520,10 +520,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 50533
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-cuda13.1-dev_1.2.1_arm64.deb
-Size: 5800678
-MD5sum: 9a6657c5e1173d57b9e3619ac559710f
-SHA1: 7ad97b5514233f9af4fc3ad0290b8c183f38319a
-SHA256: 2f17926e198cb9966835c24e3e1384470ce210ad8724976117ac0abe2682ef12
+Size: 5800674
+MD5sum: fde23551e34ad962b9d23b8fb438fb74
+SHA1: 936e35f12774757002090961ad3861ce221acbcb
+SHA256: 0e2c884bc77f76fdc4af684bc9ef5d64c83dbfe6a995c0d5a37b0d0bec966dc7
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -565,10 +565,10 @@ Maintainer: k.koide <k.koide@aist.go.jp>
 Installed-Size: 11146
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-dev_1.2.1_arm64.deb
-Size: 1192262
-MD5sum: de640e4243282b738c9fdd93dff7226e
-SHA1: d7b27c22ebbb55a941aa144deae46593db27ec17
-SHA256: 36ba3e46f8b2dd57ac03c22d73377bf65ded20b268257423df110ac8a65ab607
+Size: 1192274
+MD5sum: 26c908125379fe6b2a53e5cb793e2ff4
+SHA1: 448b07d3e09068c92b3f93a4eed58bb8562ea75a
+SHA256: 34c966188f5a3d065fd938c09cb48cc78604da3021d4c4abcaa46d450465eb62
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
@@ -577,13 +577,13 @@ Package: libgtsam-points-dev
 Version: 1.2.1
 Architecture: amd64
 Maintainer: k.koide <k.koide@aist.go.jp>
-Installed-Size: 11745
+Installed-Size: 11828
 Depends: libgtsam-notbb-dev, libboost-filesystem1.74.0 (>= 1.74.0), libboost-timer1.74.0 (>= 1.74.0), libc6 (>= 2.32), libgcc-s1 (>= 3.4), libgomp1 (>= 6), libstdc++6 (>= 11)
 Filename: ./libgtsam-points-dev_1.2.1_amd64.deb
-Size: 1230288
-MD5sum: d3b381239cf88bd7fb008a09f5d13ca0
-SHA1: 334e091658804d1774847d3732e5dd34aa3ceaa3
-SHA256: d742c8e980e11a2c76ff7a46461fe40baa3e75c81f514a4dc7c72a111dd5f8a5
+Size: 1238450
+MD5sum: 7ceec469f586034b9249ad474308e6a7
+SHA1: 23fd32cb80620c419ba18eb85f3b22b2fa5ca80c
+SHA256: df0ce0249696d18f22524df333f7b6cad525d7b56815ae2ef294e6465c986469
 Section: devel
 Priority: optional
 Description: A collection of GTSAM factors for point cloud registration
