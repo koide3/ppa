@@ -6,10 +6,14 @@ permissions:
 on:
   push:
     branches: [ main ]
-    paths: 'packages/glim_ros2'
+    paths: 
+    - 'packages/glim'
+    - 'packages/glim_ros2'
   pull_request:
     branches: [ main ]
-    paths: 'packages/glim_ros2'
+    paths:
+    - 'packages/glim'
+    - 'packages/glim_ros2'
   repository_dispatch:
     types: [trigger-event, build-glim-ros2]
 
