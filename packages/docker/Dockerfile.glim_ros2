@@ -37,6 +37,7 @@ RUN apt-get install --no-install-recommends -y libomp-dev
 COPY glim /root/glim
 
 WORKDIR /root/glim
+RUN sed -i 's|<gtsam_points/util/runnning_statistics.hpp>|<gtsam_points/util/running_statistics.hpp>|g' include/glim/common/imu_validation.hpp
 RUN bloom-generate rosdebian
 RUN sed -i 's/dh $@/dh $@ --parallel/g' ./debian/rules
 RUN sed -i 's/dh_shlibdeps/dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info/g' ./debian/rules
