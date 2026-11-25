@@ -1,14 +1,14 @@
 Package: libgtsam-notbb-dev
 Version: 4.3.0
-Architecture: arm64
+Architecture: amd64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 33569
+Installed-Size: 36316
 Depends: libboost-dev (>= 1.65), libboost-serialization1.90.0 (>= 1.90.0), libboost-timer1.90.0 (>= 1.90.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 14)
-Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
-Size: 4463380
-MD5sum: 1674dfb17d5676a2771cad232241398e
-SHA1: 026a7c615b24158b089525dec77d3a5fa88887fb
-SHA256: 267227f06e66049470752afe30ca50c7bdf2ce343c6fd85ba7a2ec67b9682c91
+Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
+Size: 4698562
+MD5sum: 6007c200713b7f9d90ff1bc5742a2a98
+SHA1: f9fd9acb3aff56db3ae7a320fd8a6e1771ab0db1
+SHA256: acc7e21d7cb0ac3af587d6c507ee97de62a35d1935b0a40247e3bc212fbedb3b
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -175,15 +175,15 @@ Description: GTSAM
 
 Package: libgtsam-notbb-dev
 Version: 4.3.0
-Architecture: amd64
+Architecture: arm64
 Maintainer: Frank Dellaert, dellaert@cc.gatech.edu
-Installed-Size: 36316
+Installed-Size: 33569
 Depends: libboost-dev (>= 1.65), libboost-serialization1.90.0 (>= 1.90.0), libboost-timer1.90.0 (>= 1.90.0), libc6 (>= 2.32), libgcc-s1 (>= 4.0), libmetis5 (>= 5.1.0.dfsg), libstdc++6 (>= 14)
-Filename: ./libgtsam-notbb-dev_4.3.0_amd64.deb
-Size: 4698562
-MD5sum: 6007c200713b7f9d90ff1bc5742a2a98
-SHA1: f9fd9acb3aff56db3ae7a320fd8a6e1771ab0db1
-SHA256: acc7e21d7cb0ac3af587d6c507ee97de62a35d1935b0a40247e3bc212fbedb3b
+Filename: ./libgtsam-notbb-dev_4.3.0_arm64.deb
+Size: 4463380
+MD5sum: 1674dfb17d5676a2771cad232241398e
+SHA1: 026a7c615b24158b089525dec77d3a5fa88887fb
+SHA256: 267227f06e66049470752afe30ca50c7bdf2ce343c6fd85ba7a2ec67b9682c91
 Section: devel
 Priority: optional
 Description: GTSAM
@@ -374,6 +374,36 @@ Size: 3561480
 MD5sum: 0b16172a8e1fbaccba64cf9f3619f389
 SHA1: d9ea53492bda48ceb678d32d1612742e4356c898
 SHA256: d043733eba523408684c1f8bb92d62c79814f0cd5262cd690f177a9930d849aa
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 1.1.3
+Architecture: arm64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 21783
+Depends: libglfw3-dev, libc6 (>= 2.43), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.46), libstdc++6 (>= 14)
+Filename: ./libiridescence-dev_1.1.3_arm64.deb
+Size: 3343320
+MD5sum: a66b4323dc09f7a490d53abb28281a77
+SHA1: 064f0da8cfe403da9857fcdf8be48ecdef7ad6c6
+SHA256: 240c5510113a3ab17d199e68f6754f66743dd7b3aa60181b37ab69d36dcdfd61
+Section: devel
+Priority: optional
+Description: 3D visualization library for rapid prototyping of 3D algorithms
+
+Package: libiridescence-dev
+Version: 1.1.3
+Architecture: amd64
+Maintainer: k.koide <k.koide@aist.go.jp>
+Installed-Size: 25051
+Depends: libglfw3-dev, libc6 (>= 2.43), libgcc-s1 (>= 3.0), libglfw3 (>= 3.3), libjpeg8 (>= 8c), libpng16-16t64 (>= 1.6.46), libstdc++6 (>= 14)
+Filename: ./libiridescence-dev_1.1.3_amd64.deb
+Size: 3591600
+MD5sum: 334b46feb9ccf7c79cc2dbee6361c554
+SHA1: b6f04f511d82862da32b5c567b8d5c1fe3957f75
+SHA256: b6df8c0b3515c1ad13f8bfe4428cc61606f5dae9489f2f7b1defe7d0237ed9ec
 Section: devel
 Priority: optional
 Description: 3D visualization library for rapid prototyping of 3D algorithms
